@@ -1,0 +1,802 @@
+[
+  {
+    "idusuario": 1,
+    "nombre": "Jhonatan ",
+    "Correo": "tkretschmer0@bloglines.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 2,
+    "nombre": "Roderick Curm",
+    "Correo": "rcurm1@joomla.org",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 3,
+    "nombre": "Sabrina McPake",
+    "Correo": "smcpake2@globo.com",
+    "gender": "Agender",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 4,
+    "nombre": "Gradeigh Cullinane",
+    "Correo": "gcullinane3@yellowbook.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 5,
+    "nombre": "Rosalynd Bensusan",
+    "Correo": "rbensusan4@networksolutions.com",
+    "gender": "Polygender",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 6,
+    "nombre": "Milo Hayesman",
+    "Correo": "mhayesman5@oracle.com",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 7,
+    "nombre": "Brett Bwy",
+    "Correo": "bbwy6@sciencedirect.com",
+    "gender": "Agender",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 8,
+    "nombre": "Jesse Domsalla",
+    "Correo": "jdomsalla7@google.pl",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 9,
+    "nombre": "Shelly Panting",
+    "Correo": "spanting8@youtube.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 10,
+    "nombre": "Marcos Mityakov",
+    "Correo": "mmityakov9@opensource.org",
+    "gender": "Genderqueer",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 11,
+    "nombre": "Homere Kidston",
+    "Correo": "hkidstona@acquirethisname.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 12,
+    "nombre": "Otes Threadgold",
+    "Correo": "othreadgoldb@digg.com",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 13,
+    "nombre": "Babara Kubista",
+    "Correo": "bkubistac@sohu.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 14,
+    "nombre": "Tiffy Odcroft",
+    "Correo": "todcroftd@nhs.uk",
+    "gender": "Polygender",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 15,
+    "nombre": "Stephi MacAiline",
+    "Correo": "smacailinee@vistaprint.com",
+    "gender": "Genderfluid",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 16,
+    "nombre": "Kellyann Woodman",
+    "Correo": "kwoodmanf@goo.ne.jp",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 17,
+    "nombre": "Grannie McGowing",
+    "Correo": "gmcgowingg@nih.gov",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 18,
+    "nombre": "Benjamen Stubbes",
+    "Correo": "bstubbesh@scribd.com",
+    "gender": "Bigender",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 19,
+    "nombre": "Reinwald Pontin",
+    "Correo": "rpontini@kickstarter.com",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 20,
+    "nombre": "Davey Readhead",
+    "Correo": "dreadheadj@opera.com",
+    "gender": "Genderfluid",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 21,
+    "nombre": "Cale Tynewell",
+    "Correo": "ctynewellk@umich.edu",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 22,
+    "nombre": "Karine Mongain",
+    "Correo": "kmongainl@topsy.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 23,
+    "nombre": "Emmalee Riggeard",
+    "Correo": "eriggeardm@wunderground.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 24,
+    "nombre": "Rosemonde Winear",
+    "Correo": "rwinearn@imdb.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 25,
+    "nombre": "Casi Hawkins",
+    "Correo": "chawkinso@hostgator.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 26,
+    "nombre": "Marcellus Minshall",
+    "Correo": "mminshallp@cam.ac.uk",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 27,
+    "nombre": "Dag Tierney",
+    "Correo": "dtierneyq@boston.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 28,
+    "nombre": "Burr Stillwell",
+    "Correo": "bstillwellr@biblegateway.com",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 29,
+    "nombre": "Jean Bloyes",
+    "Correo": "jbloyess@addtoany.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 30,
+    "nombre": "Alister Gatley",
+    "Correo": "agatleyt@harvard.edu",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 31,
+    "nombre": "Falkner Tortice",
+    "Correo": "ftorticeu@g.co",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 32,
+    "nombre": "Nevil Clowes",
+    "Correo": "nclowesv@sogou.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 33,
+    "nombre": "Angelle Melland",
+    "Correo": "amellandw@weather.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 34,
+    "nombre": "Deloris Roblett",
+    "Correo": "droblettx@prlog.org",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 35,
+    "nombre": "Georgiana Cathesyed",
+    "Correo": "gcathesyedy@com.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 36,
+    "nombre": "Marcel Storks",
+    "Correo": "mstorksz@freewebs.com",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 37,
+    "nombre": "Kimberlee McConachie",
+    "Correo": "kmcconachie10@washingtonpost.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 38,
+    "nombre": "Boniface Sheahan",
+    "Correo": "bsheahan11@pbs.org",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 39,
+    "nombre": "Otho Taylerson",
+    "Correo": "otaylerson12@parallels.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 40,
+    "nombre": "Nadeen Stanway",
+    "Correo": "nstanway13@dell.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 41,
+    "nombre": "Allys Nairns",
+    "Correo": "anairns14@jimdo.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 42,
+    "nombre": "Winifred Huddy",
+    "Correo": "whuddy15@linkedin.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 43,
+    "nombre": "Davida Kezourec",
+    "Correo": "dkezourec16@businessinsider.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 44,
+    "nombre": "Eugenia Skull",
+    "Correo": "eskull17@tiny.cc",
+    "gender": "Genderfluid",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 45,
+    "nombre": "Tani Bonallick",
+    "Correo": "tbonallick18@ezinearticles.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 46,
+    "nombre": "Galvan Freda",
+    "Correo": "gfreda19@last.fm",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 47,
+    "nombre": "Mommy Bucklee",
+    "Correo": "mbucklee1a@sun.com",
+    "gender": "Polygender",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 48,
+    "nombre": "Marilin Oakenfall",
+    "Correo": "moakenfall1b@umn.edu",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 49,
+    "nombre": "Avery Roberti",
+    "Correo": "aroberti1c@umn.edu",
+    "gender": "Agender",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 50,
+    "nombre": "Lurette Chauvey",
+    "Correo": "lchauvey1d@jigsy.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 51,
+    "nombre": "Helenka Seamans",
+    "Correo": "hseamans1e@sakura.ne.jp",
+    "gender": "Genderqueer",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 52,
+    "nombre": "Stevena Goode",
+    "Correo": "sgoode1f@miibeian.gov.cn",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 53,
+    "nombre": "Elenore Autrie",
+    "Correo": "eautrie1g@elpais.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 54,
+    "nombre": "Shoshanna Featherstonhalgh",
+    "Correo": "sfeatherstonhalgh1h@ihg.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 55,
+    "nombre": "Ailyn Mengue",
+    "Correo": "amengue1i@slashdot.org",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 56,
+    "nombre": "Winny Gynn",
+    "Correo": "wgynn1j@simplemachines.org",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 57,
+    "nombre": "Melba Boller",
+    "Correo": "mboller1k@wikipedia.org",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 58,
+    "nombre": "Doug Gimblet",
+    "Correo": "dgimblet1l@hatena.ne.jp",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 59,
+    "nombre": "Elladine Timmermann",
+    "Correo": "etimmermann1m@opera.com",
+    "gender": "Bigender",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 60,
+    "nombre": "Alison Kleinpeltz",
+    "Correo": "akleinpeltz1n@craigslist.org",
+    "gender": "Non-binary",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 61,
+    "nombre": "Corbet Matchitt",
+    "Correo": "cmatchitt1o@skype.com",
+    "gender": "Genderfluid",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 62,
+    "nombre": "Norrie Boomes",
+    "Correo": "nboomes1p@sakura.ne.jp",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 63,
+    "nombre": "Nathaniel Padell",
+    "Correo": "npadell1q@blogs.com",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 64,
+    "nombre": "Cookie Rushman",
+    "Correo": "crushman1r@fotki.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 65,
+    "nombre": "Myrta Chiommienti",
+    "Correo": "mchiommienti1s@wordpress.org",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 66,
+    "nombre": "Gusta D'Alessandro",
+    "Correo": "gdalessandro1t@instagram.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 67,
+    "nombre": "Audi Ebbers",
+    "Correo": "aebbers1u@geocities.jp",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 68,
+    "nombre": "Felic McKibben",
+    "Correo": "fmckibben1v@t-online.de",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 69,
+    "nombre": "Bartel Clemonts",
+    "Correo": "bclemonts1w@accuweather.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 70,
+    "nombre": "Hastings Covil",
+    "Correo": "hcovil1x@cdbaby.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 71,
+    "nombre": "Erek Bathoe",
+    "Correo": "ebathoe1y@smh.com.au",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 72,
+    "nombre": "Yetty Bartel",
+    "Correo": "ybartel1z@miibeian.gov.cn",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 73,
+    "nombre": "Milt Cordelet",
+    "Correo": "mcordelet20@microsoft.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 74,
+    "nombre": "Leshia Lambirth",
+    "Correo": "llambirth21@altervista.org",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 75,
+    "nombre": "Fifine Bacchus",
+    "Correo": "fbacchus22@salon.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 76,
+    "nombre": "Archambault Taggart",
+    "Correo": "ataggart23@microsoft.com",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 77,
+    "nombre": "Zolly Barszczewski",
+    "Correo": "zbarszczewski24@kickstarter.com",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 78,
+    "nombre": "Meredeth Shadrach",
+    "Correo": "mshadrach25@discuz.net",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 79,
+    "nombre": "Jena Bevis",
+    "Correo": "jbevis26@goo.gl",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 80,
+    "nombre": "Lorrin Gillise",
+    "Correo": "lgillise27@instagram.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 81,
+    "nombre": "Ambrosio Tarburn",
+    "Correo": "atarburn28@discovery.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 82,
+    "nombre": "Deedee Sikorski",
+    "Correo": "dsikorski29@mtv.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 83,
+    "nombre": "Margaretta Caudwell",
+    "Correo": "mcaudwell2a@auda.org.au",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 84,
+    "nombre": "Rolf Barniss",
+    "Correo": "rbarniss2b@ifeng.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 85,
+    "nombre": "Ingmar Melley",
+    "Correo": "imelley2c@shutterfly.com",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 86,
+    "nombre": "Leonerd Antonik",
+    "Correo": "lantonik2d@skyrock.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 87,
+    "nombre": "Pepi Eilhertsen",
+    "Correo": "peilhertsen2e@rakuten.co.jp",
+    "gender": "Bigender",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 88,
+    "nombre": "Adrien Tiron",
+    "Correo": "atiron2f@amazon.co.jp",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 89,
+    "nombre": "Brena Garton",
+    "Correo": "bgarton2g@ucoz.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 90,
+    "nombre": "Junia Asplen",
+    "Correo": "jasplen2h@npr.org",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 91,
+    "nombre": "Elspeth Borrie",
+    "Correo": "eborrie2i@mayoclinic.com",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 92,
+    "nombre": "Franky Brooker",
+    "Correo": "fbrooker2j@so-net.ne.jp",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 93,
+    "nombre": "Evvie Bertelet",
+    "Correo": "ebertelet2k@cargocollective.com",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 94,
+    "nombre": "Riobard Misselbrook",
+    "Correo": "rmisselbrook2l@army.mil",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 95,
+    "nombre": "Constantin Bellow",
+    "Correo": "cbellow2m@yellowpages.com",
+    "gender": "Male",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 96,
+    "nombre": "Griselda Hiland",
+    "Correo": "ghiland2n@mapy.cz",
+    "gender": "Female",
+    "estado_id": "Inactivo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 97,
+    "nombre": "Saul Gussin",
+    "Correo": "sgussin2o@nydailynews.com",
+    "gender": "Bigender",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  },
+  {
+    "idusuario": 98,
+    "nombre": "Kelli Brislen",
+    "Correo": "kbrislen2p@vkontakte.ru",
+    "gender": "Female",
+    "estado_id": "Activo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 99,
+    "nombre": "Rozalin Eddison",
+    "Correo": "reddison2q@ning.com",
+    "gender": "Genderqueer",
+    "estado_id": "Inactivo",
+    "rol_id": "user"
+  },
+  {
+    "idusuario": 100,
+    "nombre": "Pennie Perulli",
+    "Correo": "pperulli2r@dagondesign.com",
+    "gender": "Male",
+    "estado_id": "Activo",
+    "rol_id": "admin"
+  }
+]
