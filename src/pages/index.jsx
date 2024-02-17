@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { ProtectedRoute } from "./config/ProtectedRoute.jsx";
 import { ContainerHome } from "./App";
 import RoutesLogin from "./login";
-import { VerifyToken } from "./config/VerifyToken.jsx";
+import { reChargeForToken } from "./config/VerifyToken.jsx";
 import { useCallback, useEffect, useReducer } from "react";
 import { Permissions } from "./config/index.d.jsx";
 import { LoadingComponent } from "../components/Loading.component.jsx";
@@ -23,10 +23,11 @@ const reducer = (state, action) => {
 };
 
 function RoutePages() {
+  let location = useLocation();
   const navigate = useNavigate();
   const [user, dispatch] = useReducer(reducer, Permissions.INACTIVE);
   const verifyTokenCallback = useCallback(() => {
-    VerifyToken(dispatch, navigate);
+    reChargeForToken(dispatch, navigate, location);
   }, [dispatch]);
 
   useEffect(() => {
@@ -39,17 +40,7 @@ function RoutePages() {
   ) : (
     <Routes>
       {user === Permissions.USER && (
-        <Route
-          path="/authenticate/*"
-          element={
-            <ProtectedRoute
-              isAllowed={user === Permissions.USER}
-              redirectTo="/"
-            >
-              <RoutesLogin />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/authenticate/*" element={<RoutesLogin />} />
       )}
       {user === Permissions.ADMIN && (
         <Route
