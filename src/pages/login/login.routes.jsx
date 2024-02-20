@@ -6,7 +6,7 @@ import { DATA_URL_LOGIN } from "../../assets/DATA_URL";
 import { isAxiosError } from "axios";
 import { ValidationError } from "yup";
 import { InputPassword } from "./others/password.component";
-import loginGif from "../../assets/images/loginGif.gif"
+import loginGif from "../../assets/images/LoginGif.gif"
 
 
 export function Login() {
