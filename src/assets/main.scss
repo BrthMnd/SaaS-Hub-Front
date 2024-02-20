@@ -1,4 +1,16 @@
+  //abstracts
+  @use './scss/abstracts/mixins.scss';
+  @use './scss/abstracts/variables.scss';
 
+  //base
+  @use './scss/base/base.scss';
+  @use './scss/base/resets.scss';
+
+  //pagesStyle
+  @use '../pages/login/authStyle.scss';
+  
+  
+  // TODO: mover este apartado y solo dejar las importaciones - PENDIENTE
 .th-sortable {
     cursor: pointer;
     transition: 0.2s;
@@ -63,3 +75,4 @@
       text-align: center;
     }
   }
+

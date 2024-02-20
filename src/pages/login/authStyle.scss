@@ -1,0 +1,33 @@
+$border-primario: 4px;
+
+.divMainLogin{
+    background: #ffff;
+    box-shadow: 3px 3px 20px black;
+    padding: 2em;
+    border-radius: $border-primario;
+}
+
+.divBackground{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #004c9e;
+    box-shadow: inset 31px 31px 62px #0f61b9,
+                inset -31px -31px 62px #0095ff;
+}
+
+.divLeft{
+    border-radius: $border-primario;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.831);
+}
+
+.divRigth{
+    border-radius: $border-primario;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.831);
+}
