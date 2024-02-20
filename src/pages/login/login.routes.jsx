@@ -6,6 +6,7 @@ import { DATA_URL_LOGIN } from "../../assets/DATA_URL";
 import { isAxiosError } from "axios";
 import { ValidationError } from "yup";
 import { InputPassword } from "./others/password.component";
+import loginGif from "../../assets/images/loginGif.gif"
 
 
 export function Login() {
@@ -61,7 +62,7 @@ export function Login() {
             <div className="d-flex justify-content-center"></div>
             <div className="text-center fs-1 fw-bold">Iniciar Sesión</div>
             <div className="input-group mt-4">
-              <div className="input-group-text bg-gray">
+              <div className="input-group-text bg-dark">
                 <i className="far fa-envelope"></i>
               </div>
               <input
@@ -72,7 +73,7 @@ export function Login() {
               />
             </div>
             <div className="input-group mt-1">
-              <div className="input-group-text bg-gray">
+              <div className="input-group-text bg-dark">
                 <i className="fas fa-lock"></i>
               </div>
               <InputPassword />
@@ -87,7 +88,7 @@ export function Login() {
                 </NavLink>
               </div>
             </div>
-            <button className="btn btn-secondary  text-white w-100 mt-2 fw-semibold shadow-sm">
+            <button className="btn btn-dark  text-white w-100 mt-2 fw-semibold shadow-sm">
               Ingresar
             </button>
             <div className="d-flex gap-1 justify-content-center mt-1">
@@ -111,8 +112,9 @@ export function Login() {
         </form>
 
         
-        <div>
-          <img src="https://p5.itc.cn/q_70/images03/20211101/50e200294c84426ea1d6d79b47cbcf56.gif" alt="" width="400px"/>
+        <div className="gifLogin">
+          <img src="" alt="" />
+          <img src={loginGif} alt="" width="450px"/>
         </div>
 
       </div>

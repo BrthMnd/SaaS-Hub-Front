@@ -2,7 +2,7 @@ $border-primario: 4px;
 
 .divMainLogin{
     background: #ffff;
-    box-shadow: 3px 3px 20px black;
+    box-shadow: 7px 7px 15px rgb(0, 0, 0);
     padding: 2em;
     border-radius: $border-primario;
 }
@@ -17,9 +17,8 @@ $border-primario: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #004c9e;
-    box-shadow: inset 31px 31px 62px #0f61b9,
-                inset -31px -31px 62px #0095ff;
+    background: linear-gradient(to bottom right, black 0%, black 38%, gray 38.1%, gray 100%);
+
 }
 
 .divLeft{
@@ -30,4 +29,8 @@ $border-primario: 4px;
 .divRigth{
     border-radius: $border-primario;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.831);
+}
+
+.gifLogin{
+    padding: 15px;
 }
