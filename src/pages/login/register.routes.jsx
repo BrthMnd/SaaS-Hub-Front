@@ -4,9 +4,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { isAxiosError } from "axios";
 import { SchemaLoginValidate } from "../../helpers/validate/login.validate";
 import { ApiPost } from "../../hooks/useApi";
+
 export function Register() {
   const navigate = useNavigate();
   const [err, setError] = useState(null);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (e.target.password.value != e.target.vpassword.value) {
@@ -14,6 +16,7 @@ export function Register() {
       return;
     }
     const envio = {
+      nombre: e.target.nombre.value,
       correo: e.target.email.value,
       clave: e.target.password.value,
       vclave: e.target.vpassword.value,
@@ -40,8 +43,11 @@ export function Register() {
 
   return (
     <>
+
+      <div className="divBackground">
+
       <form
-        className="login-container bg-gray d-flex justify-content-center align-items-center vh-100  "
+        className="login-container bg-gray d-flex justify-content-center align-items-center"
         onSubmit={handleSubmit}
       >
         <div
@@ -50,7 +56,9 @@ export function Register() {
         >
           <div className="d-flex justify-content-center"></div>
           <div className="text-center fs-1 fw-bold">Registro</div>
-          <div className="input-group mt-4">
+
+
+          <div className="input-group mt-3">
             <div className="input-group-text bg-gray">
               <i className="far fa-envelope"></i>
             </div>
@@ -61,6 +69,7 @@ export function Register() {
               name="email"
             />
           </div>
+
           <div className="input-group mt-3">
             <div className="input-group-text bg-gray">
               <i className="fas fa-lock"></i>
@@ -102,7 +111,10 @@ export function Register() {
             </div>
           )}
         </div>
+      
       </form>
+
+      </div>
     </>
   );
 }

@@ -70,6 +70,7 @@ export function Login() {
                 type="text"
                 placeholder="Usuario"
                 name="email"
+                required
               />
             </div>
             <div className="input-group mt-1">
