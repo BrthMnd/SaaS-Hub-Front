@@ -61,6 +61,7 @@ export function Login() {
           <div className="divLeft login-content bg-white p-5 rounded-5 text-secondary" style={{ width: "25rem" }}>
             <div className="d-flex justify-content-center"></div>
             <div className="text-center fs-1 fw-bold">Iniciar Sesión</div>
+
             <div className="input-group mt-4">
               <div className="input-group-text bg-dark">
                 <i className="far fa-envelope"></i>
@@ -73,6 +74,8 @@ export function Login() {
                 required
               />
             </div>
+            
+
             <div className="input-group mt-1">
               <div className="input-group-text bg-dark">
                 <i className="fas fa-lock"></i>

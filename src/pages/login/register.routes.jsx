@@ -17,6 +17,7 @@ export function Register() {
     }
     const envio = {
       nombre: e.target.nombre.value,
+      genero: e.target.genero.value,
       correo: e.target.email.value,
       clave: e.target.password.value,
       vclave: e.target.vpassword.value,
@@ -46,73 +47,84 @@ export function Register() {
 
       <div className="divBackground">
 
-      <form
-        className="login-container bg-gray d-flex justify-content-center align-items-center"
-        onSubmit={handleSubmit}
-      >
-        <div
-          className="login-content bg-white p-5 rounded-5 text-secondary"
-          style={{ width: "25rem" }}
+        <form
+          className="login-container bg-gray d-flex justify-content-center align-items-center"
+          onSubmit={handleSubmit}
         >
-          <div className="d-flex justify-content-center"></div>
-          <div className="text-center fs-1 fw-bold">Registro</div>
+          <div
+            className="login-content bg-white p-5 rounded-5 text-secondary"
+            style={{ width: "25rem" }}
+          >
+            <div className="d-flex justify-content-center"></div>
+            <div className="text-center fs-1 fw-bold">Registro</div>
+
+            <div className="input-group mt-3">
+              <div className="input-group-text bg-gray">
+                <i className="far fa-envelope"></i>
+              </div>
+              <input className="form-control bg-light" type="text" placeholder="Nombre" name="nombre" required/>
+            </div>
+
+            <div className="input-group mt-3">
+              <div className="input-group-text bg-gray">
+                <i className="far fa-envelope"></i>
+              </div>
+              <input className="form-control bg-light" type="text" placeholder="Correo" name="email" required/>
+            </div>
 
 
-          <div className="input-group mt-3">
-            <div className="input-group-text bg-gray">
-              <i className="far fa-envelope"></i>
+            <div className="input-group mt-3">
+              <div className="input-group-text bg-gray">
+                <i className="fas fa-lock"></i>
+              </div>
+              <input className="form-control bg-light" type="password" placeholder="Contraseña" name="password" required/>
             </div>
-            <input
-              className="form-control bg-light"
-              type="text"
-              placeholder="E-mail"
-              name="email"
-            />
+
+            <div className="input-group mt-3">
+              <div className="input-group-text bg-gray">
+                <i className="fas fa-lock"></i>
+              </div>
+              <input className="form-control bg-light" type="password" placeholder="Verificar Contraseña" name="vpassword"  title="Verifica la contraseña" required/>
+            </div>
+
+            <div className="input-group mt-3">
+              <div className="input-group-text bg-gray">
+                <i className="fas fa-venus-mars"></i>
+              </div>
+              <select
+                className="form-control bg-light"
+                id="genero"
+                name="genero"
+                required
+              >
+                <option value="" disabled selected hidden>
+                  Género
+                </option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            <button className="btn btn-secondary  text-white w-100 mt-2 fw-semibold shadow-sm">
+              Registrar
+            </button>
+            <div className="d-flex gap-1 justify-content-center mt-3">
+              <div>Ya tienes una cuenta? </div>
+              <NavLink
+                to="/authenticate/login"
+                className="text-decoration-none text-info fw-semibold"
+              >
+                Ingresa
+              </NavLink>
+            </div>
+            {err && (
+              <div className="alert alert-danger" role="alert">
+                {err}
+              </div>
+            )}
           </div>
 
-          <div className="input-group mt-3">
-            <div className="input-group-text bg-gray">
-              <i className="fas fa-lock"></i>
-            </div>
-            <input
-              className="form-control bg-light"
-              type="password"
-              placeholder="Contraseña"
-              name="password"
-            />
-          </div>
-          <div className="input-group mt-3">
-            <div className="input-group-text bg-gray">
-              <i className="fas fa-lock"></i>
-            </div>
-            <input
-              className="form-control bg-light"
-              type="password"
-              placeholder="Verificar Contraseña"
-              name="vpassword"
-            />
-          </div>
-
-          <button className="btn btn-secondary  text-white w-100 mt-2 fw-semibold shadow-sm">
-            Registrar
-          </button>
-          <div className="d-flex gap-1 justify-content-center mt-3">
-            <div>Ya tienes una cuenta? </div>
-            <NavLink
-              to="/authenticate/login"
-              className="text-decoration-none text-info fw-semibold"
-            >
-              Ingresa
-            </NavLink>
-          </div>
-          {err && (
-            <div className="alert alert-danger" role="alert">
-              {err}
-            </div>
-          )}
-        </div>
-      
-      </form>
+        </form>
 
       </div>
     </>
