@@ -4,7 +4,7 @@ import { Register } from "./register.routes";
 import { RecoveryPassword } from "./RecoveryPassword.routes";
 import { SendCode } from "./SendCode.routes";
 import { ChangePassword } from "./ChangePassword.routes";
-import { FormRegister } from "./FormRegister.routes";
+import { VerifyEmail } from "./FormRegister.routes";
 
 function RoutesLogin() {
   return (
@@ -14,6 +14,7 @@ function RoutesLogin() {
       <Route path="/recovery" element={<SendCode />} />
       <Route path="/verifyCode" element={<RecoveryPassword />} />
       <Route path="/AuthorizedForChangePassword" element={<ChangePassword />} />
+      <Route path="/VerifyEmail/:token" element={<VerifyEmail />} />
     </Routes>
   );
 }
