@@ -1,19 +1,15 @@
-/* eslint-disable react/prop-types */
-import { SearchDatatable } from "./Search.datatable";
-import {
-  useReactTable,
-  getCoreRowModel,
-  flexRender,
-  getPaginationRowModel,
-  getSortedRowModel,
-  getFilteredRowModel,
-} from "@tanstack/react-table";
-import { ButtonPagination } from "./ButtonPagination.datatable";
 
+import { useReactTable, getCoreRowModel, getPaginationRowModel, getSortedRowModel, getFilteredRowModel } from "@tanstack/react-table";
 import { useState } from "react";
-export function DatatablesComponents({ data, columns }) {
+import { SearchDatatable } from "./Search.datatable";
+import { ButtonPagination } from "./ButtonPagination.datatable";
+import { flexRender } from "@tanstack/react-table";
+
+const DatatablesComponents = ({ data, columns }) => {
+  const filasPorPagina = 6;
   const [sorting, setSorting] = useState([]);
   const [filtering, setFiltering] = useState("");
+  const [pageIndex, setPageIndex] = useState(0);
 
   const Tble = useReactTable({
     data,
@@ -25,10 +21,21 @@ export function DatatablesComponents({ data, columns }) {
     state: {
       sorting,
       globalFilter: filtering,
+      pageIndex,
     },
-    onSortingChange: setSorting,
-    onGlobalFilterChange: setFiltering,
+    onSortingChange: (newSorting) => {
+      setSorting(newSorting);
+      setPageIndex(0); // Reset pageIndex when sorting changes
+    },
+    onGlobalFilterChange: (newFiltering) => {
+      setFiltering(newFiltering);
+      setPageIndex(0); // Reset pageIndex when filtering changes
+    },
   });
+
+  const indiceInicio = pageIndex * filasPorPagina;
+  const indiceFin = indiceInicio + filasPorPagina;
+
   return (
     <div className="card">
       <div className="card-header">
@@ -37,10 +44,7 @@ export function DatatablesComponents({ data, columns }) {
           <SearchDatatable filter={setFiltering} />
         </div>
       </div>
-      <div
-        className="card-body table-responsive p-0"
-        style={{ height: " 300px" }}
-      >
+      <div className="card-body table-responsive p-0" style={{ height: " 385px" }}>
         <table className="table table-head-fixed text-nowrap">
           <thead>
             {Tble.getHeaderGroups().map((HeaderG) => (
@@ -52,10 +56,7 @@ export function DatatablesComponents({ data, columns }) {
                     onClick={Hea.column.getToggleSortingHandler()}
                   >
                     <span>
-                      {flexRender(
-                        Hea.column.columnDef.header,
-                        Hea.getContext()
-                      )}
+                      {flexRender(Hea.column.columnDef.header, Hea.getContext())}
                       {
                         {
                           asc: <i className="fas fa-sort-alpha-up-alt "></i>,
@@ -71,11 +72,11 @@ export function DatatablesComponents({ data, columns }) {
             ))}
           </thead>
           <tbody>
-            {Tble.getRowModel().rows.map((rows) => (
-              <tr key={rows.id}>
-                {rows.getVisibleCells().map((cell) => (
-                  <td key={cell.id}>
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+            {Tble.getRowModel().rows.slice(indiceInicio, indiceFin).map((fila) => (
+              <tr key={fila.id}>
+                {fila.getVisibleCells().map((celda) => (
+                  <td key={celda.id}>
+                    {flexRender(celda.column.columnDef.cell, celda.getContext())}
                   </td>
                 ))}
               </tr>
@@ -83,7 +84,13 @@ export function DatatablesComponents({ data, columns }) {
           </tbody>
         </table>
       </div>
-      <ButtonPagination table={Tble} />
+      <ButtonPagination
+        table={Tble}
+        totalPages={Math.ceil(data.length / filasPorPagina)}
+        setPageIndex={setPageIndex}
+      />
     </div>
   );
-}
+};
+
+export { DatatablesComponents };

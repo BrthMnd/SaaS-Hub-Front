@@ -20,16 +20,11 @@ export function UsersRoute() {
       header: "Actions",
       cell: (row) => (
         <>
-          <button
-            className="btn btn-sm btn-warning"
-            onClick={() => handleUpdate(row.row._valuesCache)}
-          >
+          <button className="btn btn-sm btn-warning" onClick={() => handleUpdate(row.row._valuesCache)}>
             Actualizar
           </button>
-          <button
-            className="btn btn-sm btn-danger"
-            onClick={() => handleDelete(row.row._valuesCache)}
-          >
+
+          <button className="btn btn-sm btn-danger" onClick={() => handleDelete(row.row._valuesCache)}>
             Eliminar
           </button>
         </>
