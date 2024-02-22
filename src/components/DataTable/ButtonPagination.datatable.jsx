@@ -14,7 +14,7 @@ export function ButtonPagination({ table, totalPages, setPageIndex }) {
         Anterior
       </button>
 
-      <button type="button" className="btn btn-outline-secondary">
+      <button type="button" className="btn btn-outline-secondary" disabled>
         Actual {tableIndex + 1}
       </button>
 
@@ -34,7 +34,7 @@ export function ButtonPagination({ table, totalPages, setPageIndex }) {
         Siguiente
       </button>
 
-      <strong style={{ fontSize: "15px" }}>
+      <strong className="p-2" style={{ fontSize: "15px", margin: "auto" }}>
         {tableIndex + 1} de {totalPages}
       </strong>
     </div>
