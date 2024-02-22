@@ -44,7 +44,6 @@ export function Register() {
 
   return (
     <>
-
       <div className="divBackground">
 
         <form

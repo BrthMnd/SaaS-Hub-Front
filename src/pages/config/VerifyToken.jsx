@@ -5,7 +5,7 @@ export async function reChargeForToken(dispatch, navigate, location) {
 
   if (token) {
     dispatch({ type: Permissions.ADMIN });
-  } else if (location.pathname.startsWith("/authenticate/RegisterForm/")) {
+  } else if (location.pathname.startsWith("/authenticate/VerifyEmail/")) {
     dispatch({ type: Permissions.USER });
   } else {
     console.log("no token");
