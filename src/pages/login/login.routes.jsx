@@ -69,7 +69,7 @@ export function Login() {
               <input
                 className="form-control bg-light"
                 type="text"
-                placeholder="Usuario"
+                placeholder="Correo"
                 name="email"
                 required
               />
