@@ -1,6 +1,7 @@
 import { DatatablesComponents } from "../../components/DataTable/Datatables.component.jsx";
 import { ApiGet } from "../../hooks/useApi.jsx";
-import Modal from "../../components/modalActu.component.jsx";
+import AlertDelete from "../../components/alertDelete.component.jsx";
+import Modal from "../../components/modal.component.jsx";
 
 // import data from "./data.json";
 export function UsersRoute() {
@@ -11,6 +12,8 @@ export function UsersRoute() {
   const handleDelete = (row) => {
     console.log(row);
   };
+
+
   const columns = [
     { header: "ID", accessorKey: "idusuario" },
     { header: "Nombre", accessorKey: "nombre" },
@@ -23,17 +26,28 @@ export function UsersRoute() {
       header: "Actions",
       cell: (row) => (
         <>
+
+          {/* //TODO no borrar este ejemplo del evento onclick para el botón de actualizar */}
           {/* <button className="btn btn-sm btn-warning" onClick={() => handleUpdate(row.row._valuesCache)}>
             Actualizar
           </button> */}
 
-          <Modal>
+
+          <Modal title="Actualizar" onGuardar={handleUpdate} nameBtn="Actualizar" classBtn="btn btn-sm btn-warning">
             <h4>Contenido para actualizar usuario (pendiente)</h4>
           </Modal>
 
-          <button className="btn btn-sm btn-danger" onClick={() => handleDelete(row.row._valuesCache)}>
+
+
+          <AlertDelete titleA="Eliminar" onGuardarA={() => handleDelete(row.row._valuesCache)} nameBtnA="Eliminar" classBtnA="btn btn-sm btn-danger">
+            <div class="alert alert-danger" role="alert">
+              ¿Deseas eliminar este usuario?
+            </div>
+          </AlertDelete>
+
+          {/* <button className="btn btn-sm btn-danger" onClick={() => handleDelete(row.row._valuesCache)}>
             Eliminar
-          </button>
+          </button> */}
         </>
       ),
     },
