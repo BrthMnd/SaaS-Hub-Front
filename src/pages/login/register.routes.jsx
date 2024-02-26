@@ -14,7 +14,7 @@ export function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (e.target.password.value !== e.target.vpassword.value) {
-      setError("Las contraseñas no son iguales");
+      setError("Las contraseñas no coinciden");
       setTimeout(() => {
         setError(null); // Eliminar el error después de 4 segundos
       }, 4000);
@@ -34,7 +34,7 @@ export function Register() {
       if (isAxiosError(res)) {
         console.log("instance error ");
         setError(res.response.data.message);
-        setTimeout(() => setError(null), 4000); // Ocultar la alerta después de 4 segundos
+        setTimeout(() => setError(null), 4000); // después de 4 segundos
       } else {
         window.location.reload();
       }
@@ -64,7 +64,7 @@ export function Register() {
 
               <div className="input-group mt-3">
                 <div className="input-group-text bg-dark">
-                  <i className="far fa-envelope"></i>
+                  <i className="far fa-user"></i>
                 </div>
                 <input className="form-control bg-light" type="text" placeholder="Nombre" name="nombre" required />
               </div>
