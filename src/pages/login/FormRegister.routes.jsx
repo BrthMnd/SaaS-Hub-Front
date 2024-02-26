@@ -16,6 +16,6 @@ export function VerifyEmail() {
     // }
   }, []);
   console.log(token);
-  return (window.location.href = "/");
+  return <h1>Hola</h1>;
   // return isValid ? <h1>hola</h1> : <LoadingComponent />;
 }

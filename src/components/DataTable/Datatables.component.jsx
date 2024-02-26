@@ -1,5 +1,10 @@
-
-import { useReactTable, getCoreRowModel, getPaginationRowModel, getSortedRowModel, getFilteredRowModel } from "@tanstack/react-table";
+import {
+  useReactTable,
+  getCoreRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  getFilteredRowModel,
+} from "@tanstack/react-table";
 import { useState } from "react";
 import { SearchDatatable } from "./Search.datatable";
 import { ButtonPagination } from "./ButtonPagination.datatable";
@@ -44,7 +49,10 @@ const DatatablesComponents = ({ data, columns }) => {
           <SearchDatatable filter={setFiltering} />
         </div>
       </div>
-      <div className="card-body table-responsive p-0" style={{ height: " 385px" }}>
+      <div
+        className="card-body table-responsive p-0"
+        style={{ height: " 385px" }}
+      >
         <table className="table table-head-fixed text-nowrap">
           <thead>
             {Tble.getHeaderGroups().map((HeaderG) => (
@@ -56,7 +64,10 @@ const DatatablesComponents = ({ data, columns }) => {
                     onClick={Hea.column.getToggleSortingHandler()}
                   >
                     <span>
-                      {flexRender(Hea.column.columnDef.header, Hea.getContext())}
+                      {flexRender(
+                        Hea.column.columnDef.header,
+                        Hea.getContext()
+                      )}
                       {
                         {
                           asc: <i className="fas fa-sort-alpha-up-alt "></i>,
@@ -72,15 +83,20 @@ const DatatablesComponents = ({ data, columns }) => {
             ))}
           </thead>
           <tbody>
-            {Tble.getRowModel().rows.slice(indiceInicio, indiceFin).map((fila) => (
-              <tr key={fila.id}>
-                {fila.getVisibleCells().map((celda) => (
-                  <td key={celda.id}>
-                    {flexRender(celda.column.columnDef.cell, celda.getContext())}
-                  </td>
-                ))}
-              </tr>
-            ))}
+            {Tble.getRowModel()
+              .rows.slice(indiceInicio, indiceFin)
+              .map((fila) => (
+                <tr key={fila.id}>
+                  {fila.getVisibleCells().map((celda) => (
+                    <td key={celda.id}>
+                      {flexRender(
+                        celda.column.columnDef.cell,
+                        celda.getContext()
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
