@@ -10,6 +10,7 @@ import loginGif from "../../assets/images/LoginGif.gif"
 export function Register() {
   const navigate = useNavigate();
   const [err, setError] = useState(null);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,7 +52,7 @@ export function Register() {
   return (
     <>
       <div className="divBackground">
-        <div className="divMainLogin d-flex">
+        <container className="divMainRegister d-flex">
 
           <form
             className="login-container d-flex justify-content-center align-items-center"
@@ -59,8 +60,7 @@ export function Register() {
           >
             <div className="divLeft login-content bg-white p-5 rounded-5 text-secondary" style={{ width: "25rem" }}>
 
-              <div className="d-flex justify-content-center"></div>
-              <div className="text-center fs-1 fw-bold">Registro</div>
+              <div className="text-center text-dark font-weight-bold">Registro</div>
 
               <div className="input-group mt-3">
                 <div className="input-group-text bg-dark">
@@ -134,7 +134,7 @@ export function Register() {
             <img src={loginGif} alt="" width="450px" />
           </div>
 
-        </div>
+        </container>
 
       </div>
     </>
