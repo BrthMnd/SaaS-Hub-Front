@@ -6,23 +6,26 @@ const AlertDelete = ({
   titleA,
   nameBtnA,
   classBtnA,
+  userId // Add userId as a prop
 }) => {
+  const modalId = `exampleModalSmall-${userId}`;
+
   return (
     <>
       <button
         className={classBtnA}
         data-toggle="modal"
-        data-target="#exampleModalSmall"
+        data-target={`#${modalId}`}
       >
         {nameBtnA}
       </button>
 
       <div
         className={`modal fade ${isOpen ? "show d-block" : ""}`}
-        id="exampleModalSmall"
+        id={modalId}
         tabIndex="-1"
         role="dialog"
-        aria-labelledby="exampleModalSmallTitle"
+        aria-labelledby={`${modalId}Title`}
         aria-hidden="true"
       >
         <div className="modal-dialog modal-sm modal-dialog" role="document">
