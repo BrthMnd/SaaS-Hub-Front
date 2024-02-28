@@ -15,6 +15,12 @@ const DatatablesComponents = ({ data, columns }) => {
   const [sorting, setSorting] = useState([]);
   const [filtering, setFiltering] = useState("");
   const [pageIndex, setPageIndex] = useState(0);
+  const [pagination, setPagination] = useState({
+    pageIndex: 0,
+    pageSize: data.length, // Aquí capturo el total de datos para que el pagesize no se ponga auto en 10
+  });
+  
+  
 
   const Tble = useReactTable({
     data,
@@ -27,6 +33,7 @@ const DatatablesComponents = ({ data, columns }) => {
       sorting,
       globalFilter: filtering,
       pageIndex,
+      pagination,
     },
     onSortingChange: (newSorting) => {
       setSorting(newSorting);
