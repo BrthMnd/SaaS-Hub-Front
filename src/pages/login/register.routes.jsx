@@ -6,6 +6,7 @@ import { SchemaLoginValidate } from "../../helpers/validate/login.validate";
 import { ApiPost } from "../../hooks/useApi";
 import loginGif from "../../assets/images/LoginGif.gif"
 import toast, { Toaster } from 'react-hot-toast';
+import { DATA_URL_REGISTER } from "../../assets/DATA_URL";
 
 
 export function Register() {
@@ -31,7 +32,7 @@ export function Register() {
     };
     try {
       await SchemaLoginValidate.validate(envio);
-      const res = await ApiPost("/register", envio);
+      const res = await ApiPost(DATA_URL_REGISTER, envio);
 
   
       if (isAxiosError(res)) {
