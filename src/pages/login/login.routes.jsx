@@ -53,14 +53,14 @@ export function Login() {
 
     <div className="divBackground">
 
-      <div className="divMainLogin d-flex">
+      <container className="divMainLogin d-flex">
 
 
         <form onSubmit={handleSubmit} className=" d-flex justify-content-center align-items-center">
 
           <div className="divLeft login-content bg-white p-5 rounded-5 text-secondary" style={{ width: "25rem" }}>
             <div className="d-flex justify-content-center"></div>
-            <div className="text-center fs-1 fw-bold">Iniciar Sesión</div>
+            <div className="text-center text-dark font-weight-bold">Iniciar Sesión</div>
 
             <div className="input-group mt-4">
               <div className="input-group-text bg-dark">
@@ -117,11 +117,10 @@ export function Login() {
 
         
         <div className="gifLogin">
-          <img src="" alt="" />
           <img src={loginGif} alt="" width="450px"/>
         </div>
 
-      </div>
+      </container>
 
   
      

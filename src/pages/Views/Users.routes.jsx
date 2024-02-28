@@ -48,6 +48,7 @@ export function UsersRoute() {
               ¿Deseas eliminar este usuario?
             </div>
           </AlertDelete>
+
           {/* <button className="btn btn-sm btn-danger" onClick={() => handleDelete(row.row._valuesCache)}>
             Eliminar
           </button> */}

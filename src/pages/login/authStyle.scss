@@ -7,6 +7,13 @@ $border-primario: 4px;
     border-radius: $border-primario;
 }
 
+.divMainRegister{
+    background: #ffff;
+    box-shadow: 7px 7px 15px rgb(0, 0, 0);
+    padding: 2em;
+    border-radius: $border-primario;
+}
+
 .divBackground{
     position: absolute;
     top: 0;
@@ -17,13 +24,20 @@ $border-primario: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom right, black 0%, black 38%, gray 78.1%, gray 100%);
+    background: linear-gradient(to bottom right, black 0%, black 38%, gray 38.08%, gray 100%);
 
 }
 
 .divLeft{
     border-radius: $border-primario;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.831);
+    transition-duration: 0.2s;
+}
+
+.divLeft:hover{
+    transform: scale(1.01);
+    transition-duration: 0.2s;
+    box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.831);
 }
 
 .divRigth{
@@ -34,3 +48,5 @@ $border-primario: 4px;
 .gifLogin{
     padding: 15px;
 }
+
+
