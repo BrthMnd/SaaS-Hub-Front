@@ -22,6 +22,7 @@ export const ApiGet = (url) => {
   }, [url]);
   return [data, error, loading];
 };
+
 export async function ApiPost(url, dat) {
   try {
     const res = await axios.post(url, dat);

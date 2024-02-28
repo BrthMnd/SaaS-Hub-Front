@@ -5,12 +5,13 @@ import { isAxiosError } from "axios";
 import { SchemaLoginValidate } from "../../helpers/validate/login.validate";
 import { ApiPost } from "../../hooks/useApi";
 import loginGif from "../../assets/images/LoginGif.gif"
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export function Register() {
   const navigate = useNavigate();
   const [err, setError] = useState(null);
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,22 +33,35 @@ export function Register() {
       await SchemaLoginValidate.validate(envio);
       const res = await ApiPost("/register", envio);
 
+  
       if (isAxiosError(res)) {
-        console.log("instance error ");
+        console.log("instance error");
         setError(res.response.data.message);
-        setTimeout(() => setError(null), 4000); // después de 4 segundos
+
+        // Configurar el temporizador para limpiar el error después de 4 segundos
+        setTimeout(() => {
+          setError(null);
+        }, 4000);
       } else {
-        window.location.reload();
+        window.location.href = "/";
       }
     } catch (error) {
       if (error instanceof ValidationError) {
         setError(error.message);
+        // Configurar el temporizador para limpiar el error después de 4 segundos
+        setTimeout(() => {
+          setError(null);
+        }, 4000);
       } else {
         console.log(error);
         setError("Error desconocido en login routes");
       }
     }
   };
+
+  const alerts = (err) => {
+    toast.error(err);
+  }
 
   return (
     <>
@@ -120,11 +134,7 @@ export function Register() {
                   Ingresa
                 </NavLink>
               </div>
-              {err && (
-                <div className="alert alert-danger" role="alert">
-                  {err}
-                </div>
-              )}
+
             </div>
 
           </form>
@@ -137,6 +147,18 @@ export function Register() {
         </container>
 
       </div>
+
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
+
+      {err && (
+        <div className="" role="alert">
+          {alerts(err)} //aquí llamo la const "alert" que me pasa "err" y en alerts tengo la alerta
+        </div>
+      )}
+
     </>
   );
 }
