@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { ValidationError } from "yup";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { isAxiosError } from "axios";
 import { SchemaLoginValidate } from "../../helpers/validate/login.validate";
 import { ApiPost } from "../../hooks/useApi";
 
 export function Register() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [err, setError] = useState(null);
 
   const handleSubmit = async (e) => {
@@ -16,7 +16,7 @@ export function Register() {
       return;
     }
     const envio = {
-      nombre: e.target.nombre.value,
+      // nombre: e.target.nombre.value,
       correo: e.target.email.value,
       clave: e.target.password.value,
       vclave: e.target.vpassword.value,
