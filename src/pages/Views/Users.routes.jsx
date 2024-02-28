@@ -2,14 +2,20 @@ import { DatatablesComponents } from "../../components/DataTable/Datatables.comp
 import { ApiGet } from "../../hooks/useApi.jsx";
 import AlertDelete from "../../components/Modal/alertDelete.component.jsx";
 import Modal from "../../components/Modal/modal.component.jsx";
+import { useState } from "react";
 
 // import data from "./data.json";
 export function UsersRoute() {
+
+  const [deleteUserId, setDeleteUserId] = useState(null);
+
   const handleUpdate = (row) => {
     console.log(row);
   };
+
+
   const handleDelete = (row) => {
-    console.log(row);
+    console.log(row.nombre);
   };
 
   const columns = [
@@ -40,7 +46,7 @@ export function UsersRoute() {
 
           <AlertDelete
             titleA="Eliminar"
-            onGuardarA={() => handleDelete(row.row._valuesCache)}
+            onSaveA={() => handleDelete(row.row._valuesCache)}
             nameBtnA="Eliminar"
             classBtnA="btn btn-sm btn-danger"
           >

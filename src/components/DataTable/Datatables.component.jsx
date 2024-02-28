@@ -94,6 +94,7 @@ const DatatablesComponents = ({ data, columns }) => {
               .rows.slice(indiceInicio, indiceFin)
               .map((fila) => (
                 <tr key={fila.id}>
+                  {/* {console.log(fila.id)} */}
                   {fila.getVisibleCells().map((celda) => (
                     <td key={celda.id}>
                       {flexRender(

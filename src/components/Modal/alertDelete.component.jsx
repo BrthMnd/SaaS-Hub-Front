@@ -1,7 +1,7 @@
 const AlertDelete = ({
   isOpen,
   onClose,
-  onGuardarA,
+  onSaveA,
   children,
   titleA,
   nameBtnA,
@@ -40,7 +40,7 @@ const AlertDelete = ({
               <button
                 type="button"
                 className="btn btn-sm btn-danger"
-                onClick={onGuardarA}
+                onClick={onSaveA}
                 data-dismiss="modal"
               >
                 {titleA}
