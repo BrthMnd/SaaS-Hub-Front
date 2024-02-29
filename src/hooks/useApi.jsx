@@ -22,9 +22,29 @@ export const ApiGet = (url) => {
   }, [url]);
   return [data, error, loading];
 };
+
 export async function ApiPost(url, dat) {
   try {
     const res = await axios.post(url, dat);
+    return res;
+  } catch (err) {
+    return err;
+  }
+}
+
+export async function ApiDelete(url, id) {
+  try {
+    const res = await axios.delete(`${url}/${id}`);
+    return res;
+  } catch (err) {
+    return err;
+  }
+}
+
+
+export async function ApiUpdate(url, id, data) {
+  try {
+    const res = await axios.put(`${url}/${id}`, data);
     return res;
   } catch (err) {
     return err;

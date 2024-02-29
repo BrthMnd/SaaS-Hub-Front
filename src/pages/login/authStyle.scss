@@ -5,6 +5,7 @@ $border-primario: 4px;
     box-shadow: 7px 7px 15px rgb(0, 0, 0);
     padding: 2em;
     border-radius: $border-primario;
+    z-index: 1000;
 }
 
 .divMainRegister{
@@ -32,6 +33,7 @@ $border-primario: 4px;
     border-radius: $border-primario;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.831);
     transition-duration: 0.2s;
+    
 }
 
 .divLeft:hover{
@@ -39,6 +41,8 @@ $border-primario: 4px;
     transition-duration: 0.2s;
     box-shadow: 0px 0px 17px rgba(0, 0, 0, 0.831);
 }
+
+
 
 .divRigth{
     border-radius: $border-primario;
