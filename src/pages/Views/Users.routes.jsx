@@ -55,7 +55,7 @@ export function UsersRoute() {
 
           <Modal
             title="Actualizar"
-            onGuardar={handleUpdate}
+            onSave={handleUpdate}
             nameBtn="Actualizar"
             classBtn="btn btn-sm btn-warning"
           >
