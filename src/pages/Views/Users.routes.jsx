@@ -1,16 +1,36 @@
 import { DatatablesComponents } from "../../components/DataTable/Datatables.component.jsx";
-import { ApiGet } from "../../hooks/useApi.jsx";
+import { ApiGet, ApiDelete } from "../../hooks/useApi.jsx";
 import AlertDelete from "../../components/Modal/alertDelete.component.jsx";
 import Modal from "../../components/Modal/modal.component.jsx";
+import { useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
+import { DATA_URL_USER } from "../../assets/DATA_URL.js";
+import { useEffect } from "react";
+
 
 // import data from "./data.json";
 export function UsersRoute() {
+
+  const [deleteUserId, setDeleteUserId] = useState(null);
+
   const handleUpdate = (row) => {
     console.log(row);
   };
-  const handleDelete = (row) => {
-    console.log(row);
+
+
+  const handleDelete = async (row) => {
+    try {
+      const userId = row.idusuario;
+      console.log(row.idusuario)
+      await ApiDelete(DATA_URL_USER, userId);
+      toast.success("Eliminado exitosamente");
+      // Update the state or fetch the data again to reflect the changes
+    } catch (error) {
+      console.error("Error al eliminar usuario:", error);
+      // Handle error if needed
+    }
   };
+
 
   const columns = [
     { header: "ID", accessorKey: "idusuario" },
@@ -29,9 +49,15 @@ export function UsersRoute() {
             Actualizar
           </button> */}
 
+
+
+          {/* <button className="btn btn-sm btn-dark" onClick={() => handleDelete(row.row._valuesCache)}>
+            Eliminar
+          </button> */}
+
           <Modal
             title="Actualizar"
-            onGuardar={handleUpdate}
+            onSave={handleUpdate}
             nameBtn="Actualizar"
             classBtn="btn btn-sm btn-warning"
           >
@@ -40,22 +66,22 @@ export function UsersRoute() {
 
           <AlertDelete
             titleA="Eliminar"
-            onGuardarA={() => handleDelete(row.row._valuesCache)}
+            onSaveA={() => handleDelete(row.row._valuesCache)}
             nameBtnA="Eliminar"
             classBtnA="btn btn-sm btn-danger"
+            userId={row.row._valuesCache.idusuario} // Pass idusuario as a prop
           >
-            <div class="alert alert-danger" role="alert">
-              ¿Deseas eliminar este usuario?
+            <div class="alert alert-danger text-center" role="alert">
+              <span>¿Deseas eliminar a <strong>{row.row._valuesCache.nombre}</strong>?</span>
             </div>
           </AlertDelete>
-  
-          {/* <button className="btn btn-sm btn-danger" onClick={() => handleDelete(row.row._valuesCache)}>
-            Eliminar
-          </button> */}
+
         </>
       ),
     },
   ];
+
+
   const [data, error, loading] = ApiGet("/user");
 
 
@@ -66,6 +92,10 @@ export function UsersRoute() {
       <h1>Usuarios</h1>
       {error && <h1>Error</h1>}
       <DatatablesComponents columns={columns} data={data} />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </>
   );
 }
