@@ -1,16 +1,20 @@
 import axios from "../libs/axios.libs";
 import { useState, useEffect } from "react";
 
-export const ApiGet = (url) => {
+export const ApiGet = (url, token) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const Get = async () => {
+    const fetchData = async () => {
       try {
-        const res = await axios.get(url);
-        console.log(res.data);
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };
+        const res = await axios.get(url, config);
         setData(res.data);
       } catch (error) {
         setError(error);
@@ -18,14 +22,16 @@ export const ApiGet = (url) => {
         setLoading(false);
       }
     };
-    Get();
-  }, [url]);
+
+    fetchData();
+  }, [url, token]);
+
   return [data, error, loading];
 };
 
-export async function ApiPost(url, dat) {
+export async function ApiPost(url, data) {
   try {
-    const res = await axios.post(url, dat);
+    const res = await axios.post(url, data);
     return res;
   } catch (err) {
     return err;
@@ -42,11 +48,11 @@ export async function ApiDelete(url, id) {
 }
 
 
-export async function ApiUpdate(url, id, data) {
+export async function ApiPut(url, id, data){
   try {
-    const res = await axios.put(`${url}/${id}`, data);
-    return res;
-  } catch (err) {
-    return err;
+    const res =await axios.put(`${url}/${id}`,data)
+    return res
+  } catch (error) {
+    return error
   }
 }

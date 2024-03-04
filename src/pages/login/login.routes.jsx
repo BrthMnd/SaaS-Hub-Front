@@ -140,7 +140,8 @@ export function Login() {
 
       {err && (
         <div className="" role="alert">
-          {alerts(err)} //aquí llamo la const "alert" que me pasa "err" y en alerts tengo la alerta
+          {alerts(err)}
+           {/* //aquí llamo la const "alert" que me pasa "err" y en alerts tengo la alerta */}
         </div>
       )}
 

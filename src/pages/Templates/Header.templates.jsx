@@ -136,9 +136,10 @@ function Logout() {
       </a>
       <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         <div className="dropdown-divider"></div>
-        <a href="#" className="dropdown-item">
-          <i className="fas fa-user mr-2"></i>Perfil
-          <span className="float-right text-muted text-sm"> 2 mensajes</span>
+        <a href="/profile" className="dropdown-item">
+          <i className="fas fa-user mr-2">
+            </i>Perfil
+          
         </a>
         <div className="dropdown-divider"></div>
         <a
