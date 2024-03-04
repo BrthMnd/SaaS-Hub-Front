@@ -74,7 +74,7 @@ export function ProfileRoutes() {
   return (
     <div>
       <h1>Perfil</h1>
-      <Container className="divPriProfile mx-auto">
+      <Container className="divPriProfile mx-auto card justify-content-center">
         <Row>
           <Col md={4}>
             <div className="text-center">
