@@ -49,7 +49,7 @@ const DatatablesComponents = ({ data, columns }) => {
   const indiceFin = indiceInicio + filasPorPagina;
 
   return (
-    <div className="card">
+    <div className="card justify-content-center">
       <div className="card-header">
         <h3 className="card-title">Usuarios</h3>
         <div className="card-tools">

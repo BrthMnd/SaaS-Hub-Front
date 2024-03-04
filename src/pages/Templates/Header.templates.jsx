@@ -1,4 +1,5 @@
 import cookie from "js-cookie";
+
 export function NavHeader() {
   const handleTheme = () => {
     const body = document.getElementsByTagName("body")[0];
@@ -149,8 +150,9 @@ function Logout() {
             window.location.reload();
           }}
           className="dropdown-item"
+          title="Cierra sesión"
         >
-          <i className="fas fa-sign-out-alt mr-2"></i> Cerrar Session
+          <i className="fas fa-sign-out-alt mr-2"></i> Cerrar sesión
           <span className="float-right text-muted text-sm"></span>
         </a>
       </div>
