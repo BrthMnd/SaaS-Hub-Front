@@ -16,7 +16,7 @@ const DatatablesComponents = ({ data, columns }) => {
   const [filtering, setFiltering] = useState("");
   const [pageIndex, setPageIndex] = useState(0);
   const [pagination, setPagination] = useState({
-    pageIndex: 0,
+    pageIndex: 0, 
     pageSize: data.length, // Aquí capturo el total de datos para que el pagesize no se ponga auto en 10
   });
   
