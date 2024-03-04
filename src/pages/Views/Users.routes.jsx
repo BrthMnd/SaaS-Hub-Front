@@ -71,7 +71,7 @@ export function UsersRoute() {
             classBtnA="btn btn-sm btn-danger"
             userId={row.row._valuesCache.idusuario} // Pass idusuario as a prop
           >
-            <div class="alert alert-danger text-center" role="alert">
+            <div className="alert alert-danger text-center" role="alert">
               <span>¿Deseas eliminar a <strong>{row.row._valuesCache.nombre}</strong>?</span>
             </div>
           </AlertDelete>
