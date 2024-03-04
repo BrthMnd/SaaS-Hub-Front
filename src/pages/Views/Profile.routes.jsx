@@ -105,7 +105,7 @@ export function ProfileRoutes() {
           </Col>
 
 
-          <Col md={{ span: 7, offset: 1 }}>
+          <Col md={8}>
             <Form>
               <Card>
                 <Card.Header>
