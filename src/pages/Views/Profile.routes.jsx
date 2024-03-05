@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Form, Button, Image, Card, Nav } from "react-bootstrap";
-import { ApiGetOne, ApiUpdate } from "../../hooks/useApi";
 import { DATA_URL_USER } from "../../assets/DATA_URL";
 import toast, { Toaster } from "react-hot-toast";
 
