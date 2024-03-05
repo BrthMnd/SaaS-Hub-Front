@@ -4,7 +4,7 @@ import { Register } from "./register.routes";
 import { RecoveryPassword } from "./RecoveryPassword.routes";
 import { SendCode } from "./SendCode.routes";
 import { ChangePassword } from "./ChangePassword.routes";
-import { VerifyEmail } from "./FormRegister.routes";
+import { VerifyEmail } from "./others/EmailVerify.routes";
 
 function RoutesLogin() {
   return (

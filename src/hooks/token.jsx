@@ -1,11 +1,10 @@
-import axios from "../libs/axios.libs";
+import { ApiPost } from "./useApi";
 
 export const VerifyToken = async (token) => {
   try {
-    const data = await axios.post("/verifyToken", { token });
+    const data = await ApiPost("/EmailVerify", { token });
     return data;
   } catch (error) {
-    console.log(error);
-    return error;
+    throw error;
   }
 };
