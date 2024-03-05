@@ -2,16 +2,13 @@ import { DatatablesComponents } from "../../components/DataTable/Datatables.comp
 import { ApiGet, ApiDelete } from "../../hooks/useApi.jsx";
 import AlertDelete from "../../components/Modal/alertDelete.component.jsx";
 import Modal from "../../components/Modal/modal.component.jsx";
-import { useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import { DATA_URL_USER } from "../../assets/DATA_URL.js";
-import { useEffect } from "react";
 
 
 // import data from "./data.json";
 export function UsersRoute() {
 
-  const [deleteUserId, setDeleteUserId] = useState(null);
 
   const handleUpdate = (row) => {
     console.log(row);
@@ -30,6 +27,9 @@ export function UsersRoute() {
       // Handle error if needed
     }
   };
+
+  
+  
 
 
   const columns = [
