@@ -56,3 +56,13 @@ export async function ApiPut(url, id, data){
     return error
   }
 }
+
+
+export async function ApiGetOne(url, id) {
+  try {
+    const res = await axios.get(`${url}/${id}`);
+    return res;
+  } catch (err) {
+    return err;
+  }
+}

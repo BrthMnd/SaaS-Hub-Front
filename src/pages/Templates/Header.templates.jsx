@@ -1,4 +1,5 @@
 import cookie from "js-cookie";
+import { Link } from "react-router-dom";
 
 export function NavHeader() {
   const handleTheme = () => {
@@ -148,6 +149,8 @@ function Logout() {
           onClick={() => {
             cookie.remove("token");
             window.location.reload();
+            localStorage.clear()
+            console.log("Sesion cerrdad",localStorage.clear())
           }}
           className="dropdown-item"
           title="Cierra sesión"
