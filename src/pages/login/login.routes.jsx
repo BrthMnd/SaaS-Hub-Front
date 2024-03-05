@@ -7,11 +7,7 @@ import { isAxiosError } from "axios";
 import { ValidationError } from "yup";
 import { InputPassword } from "./others/password.component";
 import loginGif from "../../assets/images/LoginGif.gif";
-<<<<<<< HEAD
 import toast, { Toaster } from "react-hot-toast";
-=======
-import toast, { Toaster } from 'react-hot-toast';
->>>>>>> a7016bba974c81deece3d49347c1cf7378d00471
 
 export function Login() {
   const [err, setError] = useState(null);
@@ -28,11 +24,6 @@ export function Login() {
 
       if (isAxiosError(res)) {
         setError(res.response.data.message);
-<<<<<<< HEAD
-
-        // ?Configurar el temporizador para limpiar el error después de 4 segundos
-=======
->>>>>>> a7016bba974c81deece3d49347c1cf7378d00471
         setTimeout(() => {
           setError(null);
         }, 4000);
@@ -44,11 +35,6 @@ export function Login() {
     } catch (error) {
       if (error instanceof ValidationError) {
         setError(error.message);
-<<<<<<< HEAD
-
-        // ?Configurar el temporizador para limpiar el error después de 4 segundos
-=======
->>>>>>> a7016bba974c81deece3d49347c1cf7378d00471
         setTimeout(() => {
           setError(null);
         }, 4000);
@@ -64,13 +50,11 @@ export function Login() {
   };
 
   // Si el usuario ha iniciado sesión, redirigirlo a la página de perfil
- 
 
   return (
     <>
       <div className="divBackground">
         <section className="divMainLogin d-flex">
-<<<<<<< HEAD
           <form
             onSubmit={handleSubmit}
             className=" d-flex justify-content-center align-items-center"
@@ -83,13 +67,6 @@ export function Login() {
               <div className="text-center text-dark font-weight-bold">
                 Iniciar Sesión
               </div>
-
-=======
-          <form onSubmit={handleSubmit} className=" d-flex justify-content-center align-items-center">
-            <aside className="divLeft login-content bg-white p-5 rounded-5 text-secondary" style={{ width: "25rem" }}>
-              <div className="d-flex justify-content-center"></div>
-              <div className="text-center text-dark font-weight-bold">Iniciar Sesión</div>
->>>>>>> a7016bba974c81deece3d49347c1cf7378d00471
               <div className="input-group mt-4">
                 <div className="input-group-text bg-dark">
                   <i className="far fa-envelope"></i>
@@ -102,10 +79,6 @@ export function Login() {
                   required
                 />
               </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> a7016bba974c81deece3d49347c1cf7378d00471
               <div className="input-group mt-1">
                 <div className="input-group-text bg-dark">
                   <i className="fas fa-lock"></i>
@@ -136,34 +109,16 @@ export function Login() {
               </div>
             </aside>
           </form>
-<<<<<<< HEAD
-
-=======
->>>>>>> a7016bba974c81deece3d49347c1cf7378d00471
           <div className="gifLogin">
             <img src={loginGif} alt="" width="450px" />
           </div>
         </section>
       </div>
-<<<<<<< HEAD
-
       <Toaster position="top-center" reverseOrder={false} />
-
       {err && (
         <div className="" role="alert">
           {alerts(err)}
-          {/* //aquí llamo la const "alert" que me pasa "err" y en */}
-          {/* alerts tengo la alerta */}
-=======
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-      />
-      {err && (
-        <div className="" role="alert">
-          {alerts(err)}
-           {/* //aquí llamo la const "alert" que me pasa "err" y en alerts tengo la alerta */}
->>>>>>> a7016bba974c81deece3d49347c1cf7378d00471
+          {/* //aquí llamo la const "alert" que me pasa "err" y en alerts tengo la alerta */}
         </div>
       )}
     </>
