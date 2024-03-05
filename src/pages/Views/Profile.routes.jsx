@@ -105,7 +105,7 @@ export function ProfileRoutes() {
           </Col>
 
 
-          <Col md={8}>
+          <Col md={8} className="mt-3">
             <Form>
               <Card>
                 <Card.Header>
