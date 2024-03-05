@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Form, Button, Image, Card, Nav } from "react-bootstrap";
-import { ApiGetOne, ApiUpdate } from "../../hooks/useApi";
+import { ApiGetOne,ApiPut} from "../../hooks/useApi";
 import { DATA_URL_USER } from "../../assets/DATA_URL";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -103,7 +103,7 @@ export function ProfileRoutes() {
     const userDataType = localStorage.getItem("userData")
     const userIDParse = JSON.parse(userDataType)
     const userID = userIDParse.idusuario
-    ApiUpdate(DATA_URL_USER, userID, updatedProfileData)
+    ApiPut(DATA_URL_USER, userID, updatedProfileData)
 
     // Lógica para enviar la información actualizada al servidor
 
