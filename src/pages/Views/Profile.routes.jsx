@@ -133,7 +133,7 @@ export function ProfileRoutes() {
         reverseOrder={false}
       />
       <h1>Perfil</h1>
-      <Container className="divPriProfile mx-auto">
+      <Container className="divPriProfile mx-auto card justify-content-center">
         <Row>
           <Col md={4}>
             <div className="text-center">
@@ -168,7 +168,7 @@ export function ProfileRoutes() {
           </Col>
 
 
-          <Col md={8}>
+          <Col md={8} className="mt-3">
             <Form>
               <Card>
                 <Card.Header>

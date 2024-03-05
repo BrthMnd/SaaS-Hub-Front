@@ -124,7 +124,7 @@ export function Register() {
 
               </div>
 
-              <button className="btn btn-dark  text-white w-100 mt-2 fw-semibold shadow-sm">
+              <button className="btn btn-dark text-white w-100 mt-2 fw-semibold shadow-sm">
                 Registrar
               </button>
               <div className="d-flex gap-1 justify-content-center mt-3">
