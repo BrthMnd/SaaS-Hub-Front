@@ -2,8 +2,8 @@ import { DatatablesComponents } from "../../components/DataTable/Datatables.comp
 import { ApiGet, ApiDelete } from "../../hooks/useApi.jsx";
 import AlertDelete from "../../components/Modal/alertDelete.component.jsx";
 import Modal from "../../components/Modal/modal.component.jsx";
-import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { DATA_URL_USER } from "../../assets/DATA_URL.js";
 
 // import data from "./data.json";
 export function UsersRoute() {
@@ -17,7 +17,7 @@ export function UsersRoute() {
     try {
       const userId = row.idusuario;
       console.log(row.idusuario);
-      await ApiDelete(`/user`, userId);
+      await ApiDelete(DATA_URL_USER, userId);
       toast.success("Eliminado exitosamente");
       // Update the state or fetch the data again to reflect the changes
     } catch (error) {
@@ -49,7 +49,7 @@ export function UsersRoute() {
 
           <Modal
             title="Actualizar"
-            onGuardar={handleUpdate}
+            onSave={handleUpdate}
             nameBtn="Actualizar"
             classBtn="btn btn-sm btn-warning"
           >
@@ -63,8 +63,11 @@ export function UsersRoute() {
             classBtnA="btn btn-sm btn-danger"
             userId={row.row._valuesCache.idusuario} // Pass idusuario as a prop
           >
-            <div class="alert alert-danger" role="alert">
-              ¿Deseas eliminar a {row.row._valuesCache.nombre}?
+            <div className="alert alert-danger text-center" role="alert">
+              <span>
+                ¿Deseas eliminar a{" "}
+                <strong>{row.row._valuesCache.nombre}</strong>?
+              </span>
             </div>
           </AlertDelete>
         </>
@@ -72,7 +75,7 @@ export function UsersRoute() {
     },
   ];
 
-  const [data, error, loading] = ApiGet("/user");
+  const [data, error, loading] = ApiGet(DATA_URL_USER);
 
   return loading ? (
     <h1> Pregunta</h1>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ValidationError } from "yup";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { isAxiosError } from "axios";
 import { SchemaLoginValidate } from "../../helpers/validate/login.validate";
 import { ApiPost } from "../../hooks/useApi";
@@ -10,7 +10,7 @@ import { DATA_URL_REGISTER } from "../../assets/DATA_URL";
 
 
 export function Register() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [err, setError] = useState(null);
 
 
@@ -123,7 +123,7 @@ export function Register() {
 
               </div>
 
-              <button className="btn btn-dark  text-white w-100 mt-2 fw-semibold shadow-sm">
+              <button className="btn btn-dark text-white w-100 mt-2 fw-semibold shadow-sm">
                 Registrar
               </button>
               <div className="d-flex gap-1 justify-content-center mt-3">
@@ -156,7 +156,8 @@ export function Register() {
 
       {err && (
         <div className="" role="alert">
-          {alerts(err)} //aquí llamo la const "alert" que me pasa "err" y en alerts tengo la alerta
+          {alerts(err)} 
+          {/* aquí llamo la const "alert" que me pasa "err" y en alerts tengo la alerta */}
         </div>
       )}
 

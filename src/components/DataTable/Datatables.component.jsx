@@ -16,7 +16,7 @@ const DatatablesComponents = ({ data, columns }) => {
   const [filtering, setFiltering] = useState("");
   const [pageIndex, setPageIndex] = useState(0);
   const [pagination, setPagination] = useState({
-    pageIndex: 0,
+    pageIndex: 0, 
     pageSize: data.length, // Aquí capturo el total de datos para que el pagesize no se ponga auto en 10
   });
   
@@ -49,7 +49,7 @@ const DatatablesComponents = ({ data, columns }) => {
   const indiceFin = indiceInicio + filasPorPagina;
 
   return (
-    <div className="card">
+    <div className="card justify-content-center">
       <div className="card-header">
         <h3 className="card-title">Usuarios</h3>
         <div className="card-tools">

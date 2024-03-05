@@ -1,4 +1,6 @@
 import cookie from "js-cookie";
+import { Link } from "react-router-dom";
+
 export function NavHeader() {
   const handleTheme = () => {
     const body = document.getElementsByTagName("body")[0];
@@ -136,9 +138,10 @@ function Logout() {
       </a>
       <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         <div className="dropdown-divider"></div>
-        <a href="#" className="dropdown-item">
-          <i className="fas fa-user mr-2"></i>Perfil
-          <span className="float-right text-muted text-sm"> 2 mensajes</span>
+        <a href="/profile" className="dropdown-item">
+          <i className="fas fa-user mr-2">
+            </i>Perfil
+          
         </a>
         <div className="dropdown-divider"></div>
         <a
@@ -146,10 +149,13 @@ function Logout() {
           onClick={() => {
             cookie.remove("token");
             window.location.reload();
+            localStorage.clear()
+            console.log("Sesion cerrdad",localStorage.clear())
           }}
           className="dropdown-item"
+          title="Cierra sesión"
         >
-          <i className="fas fa-sign-out-alt mr-2"></i> Cerrar Session
+          <i className="fas fa-sign-out-alt mr-2"></i> Cerrar sesión
           <span className="float-right text-muted text-sm"></span>
         </a>
       </div>

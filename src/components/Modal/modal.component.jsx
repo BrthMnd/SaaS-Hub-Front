@@ -1,7 +1,7 @@
 const Modal = ({
   isOpen,
   onClose,
-  onGuardar,
+  onSave,
   children,
   title,
   nameBtn,
@@ -56,7 +56,7 @@ const Modal = ({
               <button
                 type="button"
                 className={classBtn}
-                onClick={onGuardar}
+                onClick={onSave}
                 data-dismiss="modal"
               >
                 {title}
