@@ -7,7 +7,8 @@ import { DATA_URL_USER } from "../../assets/DATA_URL.js";
 
 // import data from "./data.json";
 export function UsersRoute() {
-  const [deleteUserId, setDeleteUserId] = useState(null);
+  
+  // const [deleteUserId, setDeleteUserId] = useState(null);
 
   const handleUpdate = (row) => {
     console.log(row);
