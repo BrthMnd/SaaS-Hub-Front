@@ -1,20 +1,27 @@
 import { Reducer } from "react";
-import { UserAction, UserState, UserType } from "./user";
+import { UserAction, UserState } from "./user";
 
 export const initialState: UserState = {
-  users:
-  {
-    id: "",
-    name: "",
-    email: "",
-  }
+  user: null,
 };
-export const userReducer: Reducer<UserState, UserAction> = (state, action) => {
+
+export const userReducer: Reducer<UserState, UserAction> = (
+  state = initialState,
+  action
+) => {
+  const data = action.payload;
   switch (action.type) {
-    case 'ADD_USER':
-      return { users: action.payload };
-    case 'REMOVE_USER':
-      return { users: {} }
+    case "ADD_USER":
+      return {
+        ...state,
+        user: {
+          id: data.idusuario,
+          name: data.nombre,
+          email: data.correo,
+        },
+      };
+    case "REMOVE_USER":
+      return { user: null };
     default:
       return state;
   }

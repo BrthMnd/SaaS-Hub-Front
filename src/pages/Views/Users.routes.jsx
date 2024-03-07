@@ -4,11 +4,19 @@ import AlertDelete from "../../components/Modal/alertDelete.component.jsx";
 import Modal from "../../components/Modal/modal.component.jsx";
 import toast, { Toaster } from "react-hot-toast";
 import { DATA_URL_USER } from "../../assets/DATA_URL.js";
+import { useCallback, useEffect, useState } from "react";
 
-// import data from "./data.json";
 export function UsersRoute() {
-  
-  // const [deleteUserId, setDeleteUserId] = useState(null);
+  const [user, setData] = useState(null);
+  const [err, setError] = useState(null);
+  const [load, setLoading] = useState(null);
+
+  const fetchData = useCallback(() => {
+    const [data, error, loading] = ApiGet(DATA_URL_USER);
+    if (error) setError(error);
+    else if (data) setData(data);
+    setLoading(loading);
+  }, []);
 
   const handleUpdate = (row) => {
     console.log(row);
@@ -20,7 +28,7 @@ export function UsersRoute() {
       console.log(row.idusuario);
       await ApiDelete(DATA_URL_USER, userId);
       toast.success("Eliminado exitosamente");
-      // Update the state or fetch the data again to reflect the changes
+      fetchData();
     } catch (error) {
       console.error("Error al eliminar usuario:", error);
       // Handle error if needed
@@ -75,16 +83,16 @@ export function UsersRoute() {
       ),
     },
   ];
-
-  const [data, error, loading] = ApiGet(DATA_URL_USER);
-
-  return loading ? (
-    <h1> Pregunta</h1>
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+  return load && !data ? (
+    <h1> Cargando...</h1>
   ) : (
     <>
       <h1>Usuarios</h1>
-      {error && <h1>Error</h1>}
-      <DatatablesComponents columns={columns} data={data} />
+      {err && <h1>Error</h1>}
+      <DatatablesComponents columns={columns} data={user} />
       <Toaster position="top-center" reverseOrder={false} />
     </>
   );

@@ -43,7 +43,7 @@ export async function ApiDelete(url, id) {
     const res = await axios.delete(`${url}/${id}`);
     return res;
   } catch (err) {
-    return err;
+    throw err;
   }
 }
 

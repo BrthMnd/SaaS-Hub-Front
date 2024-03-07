@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { VerifyToken } from "../../../hooks/token";
+import { EmailToken } from "../../../hooks/token";
 import { LoadingComponent } from "../../../components/Loading.component";
 
 export function VerifyEmail() {
@@ -10,7 +10,7 @@ export function VerifyEmail() {
 
   useEffect(() => {
     console.log("verifying email...");
-    VerifyToken(token)
+    EmailToken(token)
       .then((isValid) => setValid(isValid))
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom"; // Cambio de useHistory a Redirect
+import { useContext, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom"; // Cambio de useHistory a Redirect
 import { SchemaLoginValidate } from "../../helpers/validate/login.validate";
 import { ApiPost } from "../../hooks/useApi";
 import { DATA_URL_LOGIN } from "../../assets/DATA_URL";
@@ -8,9 +8,12 @@ import { ValidationError } from "yup";
 import { InputPassword } from "./others/password.component";
 import loginGif from "../../assets/images/LoginGif.gif";
 import toast, { Toaster } from "react-hot-toast";
+import { useUserContext } from "../../context/user/user.provider";
 
 export function Login() {
   const [err, setError] = useState(null);
+  const navigate = useNavigate();
+  const { as: dispatch, state } = useUserContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,9 +31,16 @@ export function Login() {
           setError(null);
         }, 4000);
       } else {
-        // Almacenar los datos del usuario en localStorage
-        localStorage.setItem("userData", JSON.stringify(res.data));
-        window.location.href = "/perfil";
+        // * SigIn [+]
+        dispatch({
+          type: "ADD_USER",
+          payload: {
+            id: res.data.idusuario,
+            name: res.data.nombre,
+            email: res.data.correo,
+          },
+        });
+        window.location.href = "/";
       }
     } catch (error) {
       if (error instanceof ValidationError) {
