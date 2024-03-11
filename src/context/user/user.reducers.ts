@@ -1,11 +1,11 @@
 import { Reducer } from "react";
-import { UserAction, UserState } from "./user";
+import { AuthUserAction, AuthUserState } from "./user";
 
-export const initialState: UserState = {
+export const initialState: AuthUserState = {
   user: null,
 };
 
-export const userReducer: Reducer<UserState, UserAction> = (
+export const AuthUserReducer: Reducer<AuthUserState, AuthUserAction> = (
   state = initialState,
   action
 ) => {
@@ -18,6 +18,8 @@ export const userReducer: Reducer<UserState, UserAction> = (
           id: data.idusuario,
           name: data.nombre,
           email: data.correo,
+          role: data.rol,
+          status: data.estado,
         },
       };
     case "REMOVE_USER":

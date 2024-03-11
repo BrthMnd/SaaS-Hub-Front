@@ -8,12 +8,12 @@ import { ValidationError } from "yup";
 import { InputPassword } from "./others/password.component";
 import loginGif from "../../assets/images/LoginGif.gif";
 import toast, { Toaster } from "react-hot-toast";
-import { useUserContext } from "../../context/user/user.provider";
+import { useAuthUserContext } from "../../context/user/user.provider";
 
 export function Login() {
   const [err, setError] = useState(null);
   const navigate = useNavigate();
-  const { as: dispatch, state } = useUserContext();
+  const { dispatch } = useAuthUserContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,9 +58,6 @@ export function Login() {
   const alerts = (err) => {
     toast.error(err);
   };
-
-  // Si el usuario ha iniciado sesión, redirigirlo a la página de perfil
-
   return (
     <>
       <div className="divBackground">

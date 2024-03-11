@@ -14,7 +14,7 @@ export function AsideBar() {
         }}
       >
         <h1>S</h1>
-        <span className="brand-text font-weight-light">aaS</span>
+        <span className="brand-text font-weight-light">ip</span>
       </a>
 
       <section className="sidebar">

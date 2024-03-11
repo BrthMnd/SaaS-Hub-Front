@@ -1,44 +1,27 @@
 import { useEffect, useState } from "react";
-import { Container, Row, Col, Form, Button, Image, Card, Nav } from "react-bootstrap";
-import { ApiGetOne,ApiPut} from "../../hooks/useApi";
+import {
+  Container,
+  Row,
+  Col,
+  Form,
+  Button,
+  Image,
+  Card,
+  Nav,
+} from "react-bootstrap";
+import { ApiGetOne, ApiPut } from "../../hooks/useApi";
 import { DATA_URL_USER } from "../../assets/DATA_URL";
 import toast, { Toaster } from "react-hot-toast";
+import { useAuthUserContext } from "../../context/user/user.provider";
 
 export function ProfileRoutes() {
-
   const [userData, setUserData] = useState(null);
   const [validated, setValidated] = useState(false);
-
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const userDataType = localStorage.getItem("userData")
-        const userIDParse = JSON.parse(userDataType)
-
-        console.log(userIDParse)
-        const userID = userIDParse.idusuario
-        console.log("ID de usuario recuperado:", userID); // Verifica que el ID de usuario se recupera correctamente
-        if (userID) {
-          console.log(userID)
-          const userDataResponse = await ApiGetOne(DATA_URL_USER, userID); // Utiliza el ID de usuario recuperado para obtener los datos del usuario
-          console.log("EL perfil recuperado es: ", userDataResponse);
-          setUserData(userDataResponse.data);
-        }
-      } catch (error) {
-        console.error("Error al obtener los datos del usuario:", error);
-      }
-    };
-
-    fetchUserData();
-  }, []);
-
+  const { state } = useAuthUserContext();
 
   const [user, setUser] = useState({
     nombre: "",
     genero: "Masculino",
-
-    // Agrega otros campos según sea necesario
   });
 
   const [passwords, setPasswords] = useState({
@@ -51,18 +34,17 @@ export function ProfileRoutes() {
   const [activeTab, setActiveTab] = useState("#profile");
 
   const handleInputChange = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const { name, value } = e.target;
-    console.log(value)
+    console.log(value);
     setUser((prevUser) => ({
       ...prevUser,
       [name]: value,
-
     }));
   };
 
   const handleImageChange = (e) => {
-    console.log(e)
+    console.log(e);
     // Implementa lógica para cambiar la foto de perfil
   };
 
@@ -95,15 +77,14 @@ export function ProfileRoutes() {
 
     const updatedProfileData = {
       ...user,
-
     };
     toast.success("Actualizado exitosamente");
-    console.log(updatedProfileData)
-    setUserData(updatedProfileData)
-    const userDataType = localStorage.getItem("userData")
-    const userIDParse = JSON.parse(userDataType)
-    const userID = userIDParse.idusuario
-    ApiPut(DATA_URL_USER, userID, updatedProfileData)
+    console.log(updatedProfileData);
+    setUserData(updatedProfileData);
+    const userDataType = localStorage.getItem("userData");
+    const userIDParse = JSON.parse(userDataType);
+    const userID = userIDParse.idusuario;
+    ApiPut(DATA_URL_USER, userID, updatedProfileData);
 
     // Lógica para enviar la información actualizada al servidor
 
@@ -113,7 +94,6 @@ export function ProfileRoutes() {
     });
     setConfirmPassword("");
   };
-
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -126,12 +106,8 @@ export function ProfileRoutes() {
   };
 
   return (
-
     <div>
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-      />
+      <Toaster position="top-center" reverseOrder={false} />
       <h1>Perfil</h1>
       <Container className="divPriProfile mx-auto card justify-content-center">
         <Row>
@@ -148,11 +124,13 @@ export function ProfileRoutes() {
               />
             </div>
             <Form.Group>
-              <h4 className="text-center  mt-3">{userData ? userData.nombre : ""}</h4>
-              <h4 className="text-center  mt-3"><strong>{userData && userData.correo }</strong></h4>
-
-
-
+              <h4 className="text-center  mt-3">
+                {/* name */}
+                {state.user.name}
+              </h4>
+              <h4 className="text-center  mt-3">
+                <strong>{state.user.email}</strong>
+              </h4>
 
               <Form.Label>Cambiar foto de perfil</Form.Label>
               <div className="custom-file">
@@ -167,17 +145,24 @@ export function ProfileRoutes() {
             </Form.Group>
           </Col>
 
-
           <Col md={8} className="mt-3">
             <Form>
               <Card>
                 <Card.Header>
-                  <Nav variant="pills" activeKey={activeTab} onSelect={(selectedKey) => setActiveTab(selectedKey)}>
+                  <Nav
+                    variant="pills"
+                    activeKey={activeTab}
+                    onSelect={(selectedKey) => setActiveTab(selectedKey)}
+                  >
                     <Nav.Item>
                       <Nav.Link
                         href="#profile"
                         eventKey="#profile"
-                        className={`nav-link ${activeTab === "#profile" ? "active bg-dark text-white" : ""}`}
+                        className={`nav-link ${
+                          activeTab === "#profile"
+                            ? "active bg-dark text-white"
+                            : ""
+                        }`}
                         onClick={() => setActiveTab("#profile")}
                       >
                         Perfil
@@ -187,19 +172,22 @@ export function ProfileRoutes() {
                       <Nav.Link
                         href="#password"
                         eventKey="#password"
-                        className={`nav-link ${activeTab === "#password" ? "active bg-dark text-white" : ""}`}
+                        className={`nav-link ${
+                          activeTab === "#password"
+                            ? "active bg-dark text-white"
+                            : ""
+                        }`}
                         onClick={() => setActiveTab("#password")}
                       >
                         Cambiar Contraseña
                       </Nav.Link>
                     </Nav.Item>
-
                   </Nav>
                 </Card.Header>
                 <Card.Body>
                   {activeTab === "#profile" && (
                     <>
-                      <Form.Group controlId="validationCustom01" >
+                      <Form.Group controlId="validationCustom01">
                         <Form.Label>Nombre</Form.Label>
                         <Form.Control
                           required
@@ -211,8 +199,8 @@ export function ProfileRoutes() {
                           defaultValue={userData ? userData.nombre : ""}
                           min={2}
                         />
-                        <Form.Control.Feedback type="invalid" >
-                        Ingresa el Nombre
+                        <Form.Control.Feedback type="invalid">
+                          Ingresa el Nombre
                         </Form.Control.Feedback>
                       </Form.Group>
 
@@ -229,7 +217,6 @@ export function ProfileRoutes() {
                           <option value="Otro">Otro</option>
                         </Form.Control>
                       </Form.Group>
-
                     </>
                   )}
                   {activeTab === "#password" && (
@@ -264,11 +251,9 @@ export function ProfileRoutes() {
                     </>
                   )}
                   <Button
-                    
                     className="btn btn-dark text-white w-100 mt-2 fw-semibold shadow-sm"
                     onClick={updateProfile}
                     disabled={!user.nombre} // Deshabilita el botón si el campo de nombre está vacío
-
                   >
                     Guardar
                   </Button>

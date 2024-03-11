@@ -1,7 +1,7 @@
-import { useUserContext } from "../../../context/user/user.provider";
+import { useAuthUserContext } from "../../../context/user/user.provider";
 
 export function UserLayout() {
-  const { state } = useUserContext();
+  const { state } = useAuthUserContext();
 
   return (
     <div className="user-panel mt-3 pb-3 mb-3 d-flex">

@@ -8,7 +8,7 @@ import { useCallback, useEffect, useReducer } from "react";
 import { Permissions } from "./config/index.d.jsx";
 import { LoadingComponent } from "../components/Loading.component.jsx";
 import { NotFound } from "./Views/404.routes.jsx";
-import { useUserContext } from "../context/user/user.provider.ts";
+import { useAuthUserContext } from "../context/user/user.provider.ts";
 const reducer = (state, action) => {
   switch (action.type) {
     case Permissions.ADMIN:
@@ -26,7 +26,7 @@ function RoutePages() {
   let location = useLocation();
   const navigate = useNavigate();
   const [user, dispatch] = useReducer(reducer, Permissions.INACTIVE);
-  const { dispatch: ds } = useUserContext();
+  const { dispatch: ds } = useAuthUserContext();
   const verifyTokenCallback = useCallback(() => {
     reChargeForToken(dispatch, navigate, location, ds);
   }, [dispatch]);
