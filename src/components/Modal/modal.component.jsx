@@ -1,3 +1,5 @@
+import { MdOutlineEdit } from "react-icons/md";
+
 const Modal = ({
   isOpen,
   onClose,
@@ -18,7 +20,7 @@ const Modal = ({
         data-toggle="modal"
         data-target="#exampleModalLong"
       >
-        {nameBtn}
+        <strong><MdOutlineEdit /></strong>
       </button>
 
       <section
@@ -48,14 +50,14 @@ const Modal = ({
             <div className="modal-footer d-flex justify-content-center">
               <button
                 type="button"
-                className="btn btn-sm btn-secondary"
+                className="btn btn-sm btn-outline-secondary"
                 data-dismiss="modal"
               >
                 Cerrar
               </button>
               <button
                 type="button"
-                className={classBtn}
+                className="btn btn-sm btn-outline-info"
                 onClick={onSave}
                 data-dismiss="modal"
               >

@@ -138,11 +138,12 @@ function Logout() {
       </a>
       <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         <div className="dropdown-divider"></div>
-        <a href="/profile" className="dropdown-item">
+        <Link to={"/profile"} className="dropdown-item">
           <i className="fas fa-user mr-2">
-            </i>Perfil
+            </i>
+            Perfil
           
-        </a>
+        </Link>
         <div className="dropdown-divider"></div>
         <a
           type="button"
