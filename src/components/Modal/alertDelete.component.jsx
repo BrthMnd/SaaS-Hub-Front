@@ -1,3 +1,6 @@
+import { RiDeleteBinLine } from "react-icons/ri";
+
+
 const AlertDelete = ({
   isOpen,
   onClose,
@@ -17,7 +20,7 @@ const AlertDelete = ({
         data-toggle="modal"
         data-target={`#${modalId}`}
       >
-        {nameBtnA}
+        <strong><RiDeleteBinLine /></strong>
       </button>
 
       <div
@@ -28,7 +31,7 @@ const AlertDelete = ({
         aria-labelledby={`${modalId}Title`}
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-sm modal-dialog" role="document">
+        <div className="zmodal-dialog modal-sm modal-dialog" role="document">
           <div className="modal-content">
             <main className="modal-body overflow-auto">{children}</main>
             <div className="modal-footer d-flex justify-content-center">

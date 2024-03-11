@@ -60,7 +60,7 @@ export function UsersRoute() {
             title="Actualizar"
             onSave={handleUpdate}
             nameBtn="Actualizar"
-            classBtn="btn btn-sm btn-warning"
+            classBtn="btn btn-sm btn-outline-info col-md-6 mr-1"
           >
             <h4>Contenido para actualizar usuario (pendiente)</h4>
           </Modal>
@@ -69,7 +69,7 @@ export function UsersRoute() {
             titleA="Eliminar"
             onSaveA={() => handleDelete(row.row._valuesCache)}
             nameBtnA="Eliminar"
-            classBtnA="btn btn-sm btn-danger"
+            classBtnA="btn btn-sm btn-outline-danger col-md-6"
             userId={row.row._valuesCache.idusuario} // Pass idusuario as a prop
           >
             <div className="alert alert-danger text-center" role="alert">
