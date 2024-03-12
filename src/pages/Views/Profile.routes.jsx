@@ -12,7 +12,7 @@ import {
 import { ApiGetOne, ApiPut } from "../../hooks/useApi";
 import { DATA_URL_USER } from "../../assets/DATA_URL";
 import toast, { Toaster } from "react-hot-toast";
-import { useAuthUserContext } from "../../context/user/user.provider";
+import { useAuthUserContext } from "../../context/Auth/user.provider";
 
 export function ProfileRoutes() {
   const [userData, setUserData] = useState(null);

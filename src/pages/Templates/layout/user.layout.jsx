@@ -1,4 +1,4 @@
-import { useAuthUserContext } from "../../../context/user/user.provider";
+import { useAuthUserContext } from "../../../context/Auth/user.provider";
 
 export function UserLayout() {
   const { state } = useAuthUserContext();

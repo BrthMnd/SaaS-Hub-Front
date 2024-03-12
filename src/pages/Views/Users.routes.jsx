@@ -1,40 +1,23 @@
 import { DatatablesComponents } from "../../components/DataTable/Datatables.component.jsx";
-import { ApiGet, ApiDelete } from "../../hooks/useApi.jsx";
 import AlertDelete from "../../components/Modal/alertDelete.component.jsx";
 import Modal from "../../components/Modal/modal.component.jsx";
-import toast, { Toaster } from "react-hot-toast";
-import { DATA_URL_USER } from "../../assets/DATA_URL.js";
-import { useCallback, useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
+import { useUserContext } from "../../context/users/users.reducers.jsx";
+import { useEffect } from "react";
 
 export function UsersRoute() {
-  const [user, setData] = useState(null);
-  const [err, setError] = useState(null);
-  const [load, setLoading] = useState(null);
+  const { users, loading, error, LoadUser } = useUserContext();
+console.log(users)
+const handleUpdate = () => {
+  console.log("Update")
+}
+const handleDelete =()=>{
 
-  const fetchData = useCallback(() => {
-    const [data, error, loading] = ApiGet(DATA_URL_USER);
-    if (error) setError(error);
-    else if (data) setData(data);
-    setLoading(loading);
+  console.log("Delete")
+}
+  useEffect(() => {
+    LoadUser();
   }, []);
-
-  const handleUpdate = (row) => {
-    console.log(row);
-  };
-
-  const handleDelete = async (row) => {
-    try {
-      const userId = row.idusuario;
-      console.log(row.idusuario);
-      await ApiDelete(DATA_URL_USER, userId);
-      toast.success("Eliminado exitosamente");
-      fetchData();
-    } catch (error) {
-      console.error("Error al eliminar usuario:", error);
-      // Handle error if needed
-    }
-  };
-
   const columns = [
     { header: "ID", accessorKey: "idusuario" },
     { header: "Nombre", accessorKey: "nombre" },
@@ -83,16 +66,15 @@ export function UsersRoute() {
       ),
     },
   ];
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-  return load && !data ? (
+
+  console.log("Los usuarios son:",users)
+  return loading && !users ? (
     <h1> Cargando...</h1>
   ) : (
     <>
       <h1>Usuarios</h1>
-      {err && <h1>Error</h1>}
-      <DatatablesComponents columns={columns} data={user} />
+      {error && <h1>Error</h1>}
+      <DatatablesComponents columns={columns} data={users} />
       <Toaster position="top-center" reverseOrder={false} />
     </>
   );

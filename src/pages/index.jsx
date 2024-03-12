@@ -8,7 +8,7 @@ import { useCallback, useEffect, useReducer } from "react";
 import { Permissions } from "./config/index.d.jsx";
 import { LoadingComponent } from "../components/Loading.component.jsx";
 import { NotFound } from "./Views/404.routes.jsx";
-import { useAuthUserContext } from "../context/user/user.provider.ts";
+import { useAuthUserContext } from "../context/Auth/user.provider.ts";
 const reducer = (state, action) => {
   switch (action.type) {
     case Permissions.ADMIN:

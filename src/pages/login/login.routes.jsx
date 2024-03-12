@@ -8,7 +8,7 @@ import { ValidationError } from "yup";
 import { InputPassword } from "./others/password.component";
 import loginGif from "../../assets/images/LoginGif.gif";
 import toast, { Toaster } from "react-hot-toast";
-import { useAuthUserContext } from "../../context/user/user.provider";
+import { useAuthUserContext } from "../../context/Auth/user.provider";
 
 export function Login() {
   const [err, setError] = useState(null);
