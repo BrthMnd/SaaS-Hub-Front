@@ -1,20 +1,31 @@
 import { DatatablesComponents } from "../../components/DataTable/Datatables.component.jsx";
 import AlertDelete from "../../components/Modal/alertDelete.component.jsx";
 import Modal from "../../components/Modal/modal.component.jsx";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useUserContext } from "../../context/users/users.reducers.jsx";
 import { useEffect } from "react";
+import { ApiDelete } from "../../hooks/useApi.jsx";
+import { DATA_URL_USER } from "../../assets/DATA_URL.js";
 
 export function UsersRoute() {
-  const { users, loading, error, LoadUser } = useUserContext();
+  const { users, loading, error, LoadUser, setUsers } = useUserContext();
 console.log(users)
-const handleUpdate = () => {
-  console.log("Update")
-}
-const handleDelete =()=>{
+const handleUpdate = (row) => {
+  console.log(row);
+};
 
-  console.log("Delete")
-}
+const handleDelete = async (row) => {
+  try {
+    const userId = row.idusuario;
+    console.log(row.idusuario);
+    await ApiDelete(DATA_URL_USER, userId);
+    toast.success("Eliminado exitosamente");
+    setUsers(users.filter((user) => user.idusuario !== userId))
+  } catch (error) {
+    console.error("Error al eliminar usuario:", error);
+    
+  }
+};
   useEffect(() => {
     LoadUser();
   }, []);

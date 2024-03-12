@@ -9,7 +9,7 @@ export const UserProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const LoadUser = async () => {
     try {
-      const data = await axios.get('user') 
+      const data = await axios.get('/user') 
       setUsers(data.data);
     } catch (error) {
       setError(error);
@@ -22,7 +22,8 @@ export const UserProvider = ({ children }) => {
       users, 
       loading, 
       error, 
-      LoadUser }}>
+      LoadUser, 
+      setUsers }}>
       {children}
     </UserContext.Provider>
   );
