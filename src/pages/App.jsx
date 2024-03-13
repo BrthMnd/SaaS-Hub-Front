@@ -6,6 +6,7 @@ import { FooterTemplate } from "./Templates/footer.tempates";
 import { Home } from "./Views/Home.routes";
 import { UsersRoute } from "./Views/Users.routes";
 import { ProfileRoutes } from "./Views/Profile.routes";
+import { Pruebas } from "./Views/Pruebas.routes";
 export function ContainerHome() {
   return (
     <div className="wrapper">
@@ -16,7 +17,7 @@ export function ContainerHome() {
           <Route path="/" element={<Home />} />
           <Route path="/user" element={<UsersRoute />} />
           <Route path="/profile" element={<ProfileRoutes />} />
-         
+          <Route path="/pruebas" element={<Pruebas />} />
           <Route path="*" element={<Navigate to={"/"} />} />
         </Routes>
       </ContentWrapper>

@@ -60,6 +60,12 @@ export function AsideBar() {
                     <p>Permisos</p>
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link to={"/pruebas"} className="nav-link">
+                    <i className="far fa-circle nav-icon"></i>
+                    <p>Pruebas</p>
+                  </Link>
+                </li>
               </ul>
             </li>
           </ul>
