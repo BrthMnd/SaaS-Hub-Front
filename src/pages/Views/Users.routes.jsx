@@ -1,32 +1,34 @@
 import { DatatablesComponents } from "../../components/DataTable/Datatables.component.jsx";
-import { ApiGet, ApiDelete } from "../../hooks/useApi.jsx";
 import AlertDelete from "../../components/Modal/alertDelete.component.jsx";
 import Modal from "../../components/Modal/modal.component.jsx";
 import toast, { Toaster } from "react-hot-toast";
+import { useUserContext } from "../../context/users/users.reducers.jsx";
+import { useEffect } from "react";
+import { ApiDelete } from "../../hooks/useApi.jsx";
 import { DATA_URL_USER } from "../../assets/DATA_URL.js";
 
-// import data from "./data.json";
 export function UsersRoute() {
-  
-  // const [deleteUserId, setDeleteUserId] = useState(null);
+  const { users, loading, error, LoadUser, setUsers } = useUserContext();
+console.log(users)
+const handleUpdate = (row) => {
+  console.log(row);
+};
 
-  const handleUpdate = (row) => {
-    console.log(row);
-  };
-
-  const handleDelete = async (row) => {
-    try {
-      const userId = row.idusuario;
-      console.log(row.idusuario);
-      await ApiDelete(DATA_URL_USER, userId);
-      toast.success("Eliminado exitosamente");
-      // Update the state or fetch the data again to reflect the changes
-    } catch (error) {
-      console.error("Error al eliminar usuario:", error);
-      // Handle error if needed
-    }
-  };
-
+const handleDelete = async (row) => {
+  try {
+    const userId = row.idusuario;
+    console.log(row.idusuario);
+    await ApiDelete(DATA_URL_USER, userId);
+    toast.success("Eliminado exitosamente");
+    setUsers(users.filter((user) => user.idusuario !== userId))
+  } catch (error) {
+    console.error("Error al eliminar usuario:", error);
+    
+  }
+};
+  useEffect(() => {
+    LoadUser();
+  }, []);
   const columns = [
     { header: "ID", accessorKey: "idusuario" },
     { header: "Nombre", accessorKey: "nombre" },
@@ -64,11 +66,13 @@ export function UsersRoute() {
             classBtnA="btn btn-sm btn-outline-danger col-md-6"
             userId={row.row._valuesCache.idusuario} // Pass idusuario as a prop
           >
-            <div className="alert alert-danger text-center" role="alert">
+            <div className="container mt-3">
+            <div className="alert alert-danger alert-dismissible text-center" role="alert">
               <span>
                 ¿Deseas eliminar a{" "}
                 <strong>{row.row._valuesCache.nombre}</strong>?
               </span>
+            </div>
             </div>
           </AlertDelete>
         </>
@@ -76,15 +80,14 @@ export function UsersRoute() {
     },
   ];
 
-  const [data, error, loading] = ApiGet(DATA_URL_USER);
-
-  return loading ? (
-    <h1> Pregunta</h1>
+  console.log("Los usuarios son:",users)
+  return loading && !users ? (
+    <h1> Cargando...</h1>
   ) : (
     <>
       <h1>Usuarios</h1>
       {error && <h1>Error</h1>}
-      <DatatablesComponents columns={columns} data={data} />
+      <DatatablesComponents columns={columns} data={users} />
       <Toaster position="top-center" reverseOrder={false} />
     </>
   );

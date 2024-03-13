@@ -73,7 +73,10 @@ export function Register() {
             className="login-container d-flex justify-content-center align-items-center"
             onSubmit={handleSubmit}
           >
-            <div className="divLeft login-content bg-white p-5 rounded-5 text-secondary" style={{ width: "25rem" }}>
+            <main
+              className="divLeft login-content bg-white p-5 text-secondary"
+              style={{ width: "25em" }}
+            >
 
               <div className="text-center text-dark font-weight-bold">Registro</div>
 
@@ -136,7 +139,7 @@ export function Register() {
                 </NavLink>
               </div>
 
-            </div>
+            </main>
 
           </form>
 

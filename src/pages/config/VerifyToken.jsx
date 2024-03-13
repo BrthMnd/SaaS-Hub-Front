@@ -1,10 +1,22 @@
 import cookie from "js-cookie";
 import { Permissions } from "./index.d";
-export async function reChargeForToken(dispatch, navigate, location) {
+import { VerifyTokenLogin } from "../../hooks/token";
+export async function reChargeForToken(
+  dispatch,
+  navigate,
+  location,
+  dispatchUser
+) {
   const { token } = cookie.get();
 
   if (token) {
-    dispatch({ type: Permissions.ADMIN });
+    VerifyTokenLogin(token)
+      .then((data) => {
+        console.log(data.data.info);
+        dispatch({ type: Permissions.ADMIN });
+        dispatchUser({ type: "ADD_USER", payload: data.data.info });
+      })
+      .catch((error) => console.log(error));
   } else if (location.pathname.startsWith("/authenticate/VerifyEmail/")) {
     dispatch({ type: Permissions.USER });
   } else {

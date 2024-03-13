@@ -1,14 +1,16 @@
 import React, { useReducer, FC } from "react";
-import { initialState, userReducer } from "./user/user.reducers";
-import { UserContext } from "./user/user.provider";
+import { initialState, AuthUserReducer } from "./Auth/user.reducers";
+import { AuthUserContext } from "./Auth/user.provider";
 import { StoreProps } from "./provider";
+import { UserProvider } from "./users/users.reducers";
 
 export const Store: FC<StoreProps> = ({ children }) => {
-  const [state, dispatch] = useReducer(userReducer, initialState);
-
+  const [state, dispatch] = useReducer(AuthUserReducer, initialState);
   return (
-    <UserContext.Provider value={{ state, dispatch }}>
+    <AuthUserContext.Provider value={{ state, dispatch }}>
+      <UserProvider>
       {children}
-    </UserContext.Provider>
+      </UserProvider>
+    </AuthUserContext.Provider>
   );
 };

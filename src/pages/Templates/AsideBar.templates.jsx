@@ -3,7 +3,7 @@ import { UserLayout } from "./layout/user.layout";
 
 export function AsideBar() {
   return (
-    <aside className="main-sidebar sidebar-dark-primary elevation-4">
+    <aside className="main-sidebar sidebar-dark-primary bg-dark elevation-4">
       <a
         href="index.html"
         className="brand-link"
@@ -14,7 +14,7 @@ export function AsideBar() {
         }}
       >
         <h1>S</h1>
-        <span className="brand-text font-weight-light">aaS</span>
+        <span className="brand-text font-weight-light">ip</span>
       </a>
 
       <section className="sidebar">

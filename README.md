@@ -14,5 +14,5 @@ Asegúrate de tener instalados los siguientes componentes antes de comenzar:
 1. **Clonar el Repositorio**
    ```bash
    git clone https://github.com/tu-usuario/disruptive-react-frontend.git
-   cd disruptive-react-frontend
+   cd SaaS-Hub-Front
    ```
