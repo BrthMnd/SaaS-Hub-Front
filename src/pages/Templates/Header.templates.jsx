@@ -11,7 +11,7 @@ export function NavHeader() {
     }
   };
   return (
-    <nav className="main-header navbar navbar-expand navbar-dark ">
+    <nav className="main-header navbar navbar-expand navbar-dark bg-dark">
       <ul className="navbar-nav">
         <li className="nav-item">
           <a className="nav-link" data-widget="pushmenu" href="#" role="button">
