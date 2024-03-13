@@ -59,9 +59,9 @@ export function Login() {
             onSubmit={handleSubmit}
             className=" d-flex justify-content-center align-items-center"
           >
-            <aside
-              className="divLeft login-content bg-white p-5 rounded-5 text-secondary"
-              style={{ width: "25rem" }}
+            <main
+              className="divLeft login-content bg-white p-5 text-secondary"
+              style={{ width: "25em" }}
             >
               <div className="d-flex justify-content-center"></div>
               <div className="text-center text-dark font-weight-bold">
@@ -107,7 +107,7 @@ export function Login() {
                   Registrarse
                 </NavLink>
               </div>
-            </aside>
+            </main>
           </form>
           <div className="gifLogin">
             <img src={loginGif} alt="" width="450px" />

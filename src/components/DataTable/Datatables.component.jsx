@@ -11,7 +11,7 @@ import { ButtonPagination } from "./ButtonPagination.datatable";
 import { flexRender } from "@tanstack/react-table";
 
 const DatatablesComponents = ({ data, columns }) => {
-  const filasPorPagina = 6;
+  const filasPorPagina = 10;
   const [sorting, setSorting] = useState([]);
   const [filtering, setFiltering] = useState("");
   const [pageIndex, setPageIndex] = useState(0);
