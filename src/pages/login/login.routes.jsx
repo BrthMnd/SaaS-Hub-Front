@@ -50,7 +50,7 @@ export function Login() {
         }, 4000);
       } else {
         console.log(error);
-        setError("Error desconocido en login routes");
+        setError(error.message);
       }
     }
   };

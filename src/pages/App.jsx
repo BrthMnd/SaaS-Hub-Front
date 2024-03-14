@@ -17,7 +17,6 @@ export function ContainerHome() {
           <Route path="/" element={<Home />} />
           <Route path="/user" element={<UsersRoute />} />
           <Route path="/profile" element={<ProfileRoutes />} />
-          <Route path="/pruebas" element={<Pruebas />} />
           <Route path="*" element={<Navigate to={"/"} />} />
         </Routes>
       </ContentWrapper>
