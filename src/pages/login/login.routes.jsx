@@ -50,7 +50,10 @@ export function Login() {
         }, 4000);
       } else {
         console.log(error);
-        setError(error.message);
+        setError(error.response.data.message);
+        setTimeout(() => {
+          setError(null);
+        }, 4000);
       }
     }
   };
