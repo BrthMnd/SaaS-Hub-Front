@@ -1,5 +1,7 @@
 import cookie from "js-cookie";
 import { Link } from "react-router-dom";
+import { FiSettings } from "react-icons/fi";
+import { FiShoppingCart } from "react-icons/fi";
 
 export function NavHeader() {
   const handleTheme = () => {
@@ -13,19 +15,9 @@ export function NavHeader() {
   return (
     <nav className="main-header navbar navbar-expand navbar-dark bg-dark">
       <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link" data-widget="pushmenu" href="#" role="button">
+        <li className="nav-item ml-2">
+          <a className="nav-link" data-widget="pushmenu" href="" role="button">
             <i className="fas fa-bars"></i>
-          </a>
-        </li>
-        <li className="nav-item d-none d-sm-inline-block">
-          <a href="index3.html" className="nav-link">
-            Home
-          </a>
-        </li>
-        <li className="nav-item d-none d-sm-inline-block">
-          <a href="#" className="nav-link">
-            Contact
           </a>
         </li>
       </ul>
@@ -33,10 +25,7 @@ export function NavHeader() {
       {/*<!-- Right navbar links -->*/}
       <ul className="navbar-nav ml-auto">
         <li className="nav-item dropdown">
-          <a className="nav-link" data-toggle="dropdown" href="#">
-            <i className="far fa-comments"></i>
-            <span className="badge badge-danger navbar-badge">3</span>
-          </a>
+       
           <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <a href="#" className="dropdown-item">
               <div className="media">
@@ -109,40 +98,70 @@ export function NavHeader() {
             </a>
           </div>
         </li>
-        <li className="nav-item">
-          <a
-            className="nav-link"
-            data-widget="fullscreen"
-            href="#"
-            role="button"
-          >
-            <i className="fas fa-expand-arrows-alt"></i>
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#" role="button" onClick={handleTheme}>
-            <i className="fas fa-moon"></i>
-          </a>
-        </li>
+        <a className="nav-link">
+          <i className="mr-2"><FiShoppingCart /></i>
+          <span className="badge badge-warning navbar-badge"></span>
+        </a>
+     
         <Logout />
       </ul>
     </nav>
+
   );
 }
 function Logout() {
+  const handleTheme = () => {
+    const body = document.getElementsByTagName("body")[0];
+    if (body.classList.contains("dark-mode")) {
+      body.classList.remove("dark-mode");
+    } else {
+      body.classList.add("dark-mode");
+    }
+  };
   return (
+
+  
+    
     <li className="nav-item dropdown">
-      <a className="nav-link" data-toggle="dropdown" href="#">
-        <i className="fas fa-users-cog "></i>
-        <span className="badge badge-warning navbar-badge">15</span>
+      <a className="nav-link" data-toggle="dropdown" href="">
+        <i className="mr-1"><FiSettings /></i>
+        <span className="badge badge-warning navbar-badge"></span>
       </a>
-      <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+
+      
+      <div className="dropdown-menu dropdown-menu dropdown-menu-right mr-3">
+
+        <li className="nav-item">
+      
+        </li>
+
+        <div className="">
+  
+            <a className="dropdown-item" role="button" onClick={handleTheme}>
+              <i className="fas fa-moon mr-2"></i>
+              Modo
+            </a>
+  
+        </div>
+
         <div className="dropdown-divider"></div>
+
+        <div className="">
+          <a
+          className="dropdown-item"
+          data-widget="fullscreen"
+          role="button"
+          >
+          <i className="fas fa-expand-arrows-alt mr-2"></i>
+          Pantalla
+          </a>
+        </div>
+
+        <div className="dropdown-divider"></div>
+
         <Link to={"/profile"} className="dropdown-item">
-          <i className="fas fa-user mr-2">
-            </i>
+          <i className="fas fa-user mr-2"></i>
             Perfil
-          
         </Link>
         <div className="dropdown-divider"></div>
         <a

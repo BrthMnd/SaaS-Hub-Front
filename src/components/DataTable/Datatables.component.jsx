@@ -11,7 +11,7 @@ import { ButtonPagination } from "./ButtonPagination.datatable";
 import { flexRender } from "@tanstack/react-table";
 
 const DatatablesComponents = ({ data, columns }) => {
-  const filasPorPagina = 10;
+  const filasPorPagina = 7;
   const [sorting, setSorting] = useState([]);
   const [filtering, setFiltering] = useState("");
   const [pageIndex, setPageIndex] = useState(0);
@@ -58,7 +58,7 @@ const DatatablesComponents = ({ data, columns }) => {
       </div>
       <div
         className="card-body table-responsive p-0"
-        style={{ height: " 385px" }}
+        style={{ height: " 378px" }}
       >
         <table className="table table-head-fixed text-nowrap">
           <thead>
