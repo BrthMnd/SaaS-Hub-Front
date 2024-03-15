@@ -22,10 +22,10 @@ export function UserLayout() {
       </div>
       <div className="info">
         {state ? (
-          <a href="/perfil" className="d-block">
+          <li href="/perfil" className="d-block">
             <strong>{state.user.name}</strong>
             <br />
-          </a>
+          </li>
         ) : (
           <p>No hay datos de usuario disponibles</p>
         )}

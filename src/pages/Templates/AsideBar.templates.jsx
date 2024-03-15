@@ -13,7 +13,7 @@ export function AsideBar() {
           alignItems: "center",
         }}
       >
-        <h1>S</h1>
+        <h2>S</h2>
         <span className="brand-text font-weight-light">ip</span>
       </a>
 

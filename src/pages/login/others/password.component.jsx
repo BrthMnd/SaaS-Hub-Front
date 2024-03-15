@@ -38,7 +38,7 @@ export function InputPassword() {
         id="cont"
         onBlur={hiddenEye}
         onFocus={ShowEye}
-        
+        required
       />
       <span
         id="eye"
